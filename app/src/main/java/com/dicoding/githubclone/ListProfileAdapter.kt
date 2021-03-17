@@ -1,5 +1,6 @@
 package com.dicoding.githubclone
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,5 +33,11 @@ class ListProfileAdapter(private val listProfile: ArrayList<Profiles>):RecyclerV
         holder.tvFullName.text = profile.fullName
         holder.tvUsername.text = profile.username
         holder.tvBio.text = profile.bio
+
+        holder.itemView.setOnClickListener{
+            val context = holder.itemView.context
+            val detailIntent: Intent = Intent(context,ProfilePage::class.java)
+            context.startActivity(detailIntent)
+        }
     }
 }

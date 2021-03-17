@@ -1,8 +1,8 @@
 package com.dicoding.githubclone
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.Toast
@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
         rvProfiles = findViewById(R.id.rv_github_profiles)
         rvProfiles.setHasFixedSize(true)
-        rvProfiles.setOnClickListener(this)
 
         list.addAll(ProfilesData.listData)
         showRecyclerList()
@@ -33,9 +32,6 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         when (v?.id){
             R.id.back_group -> {
                 Toast.makeText(applicationContext,"App under construction",Toast.LENGTH_SHORT).show()
-            }
-            R.id.rv_github_profiles -> {
-
             }
         }
     }
