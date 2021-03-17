@@ -5,7 +5,7 @@
     android:background="@drawable/bottom_border">
     <RelativeLayout
         android:clickable="true"
-        android:id="@+id/back_group"
+        android:id="@+id/back_to_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp">
