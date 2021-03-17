@@ -4,10 +4,10 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Profiles(
-    var fullName: String = "",
-    var username: String = "",
-    var bio: String = "",
-    var profilePicture: Int = 0
+    var fullName: String?= "",
+    var username: String?= "",
+    var bio: String?= "",
+    var profilePicture: Int?= 0
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readString(),
@@ -20,7 +20,7 @@ data class Profiles(
         parcel.writeString(fullName)
         parcel.writeString(username)
         parcel.writeString(bio)
-        parcel.writeInt(profilePicture)
+        parcel.writeValue(profilePicture)
     }
 
     override fun describeContents(): Int {
