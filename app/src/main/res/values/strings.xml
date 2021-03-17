@@ -1,0 +1,11 @@
+<resources>
+    //Action Bar
+    <string name="app_name">App Name</string>
+    <string name="following">Following</string>
+    <string name="back">Back</string>
+
+    //RecyclerView
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+</resources>
