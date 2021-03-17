@@ -10,6 +10,7 @@
     <include layout="@layout/toolbar"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:clickable="true"
         android:id="@+id/rv_github_profiles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

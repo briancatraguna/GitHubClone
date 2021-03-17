@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
         rvProfiles = findViewById(R.id.rv_github_profiles)
         rvProfiles.setHasFixedSize(true)
+        rvProfiles.setOnClickListener(this)
 
         list.addAll(ProfilesData.listData)
         showRecyclerList()
@@ -32,6 +33,9 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         when (v?.id){
             R.id.back_group -> {
                 Toast.makeText(applicationContext,"App under construction",Toast.LENGTH_SHORT).show()
+            }
+            R.id.rv_github_profiles -> {
+
             }
         }
     }
