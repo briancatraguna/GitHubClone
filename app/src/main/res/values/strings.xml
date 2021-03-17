@@ -8,4 +8,9 @@
     <string name="full_name">Full Name</string>
     <string name="username">Username</string>
     <string name="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
+    //Detail Action Bar
+    <string name="share">Share</string>
+    <string name="report">Report</string>
+    <string name="cancel">Cancel</string>
 </resources>
