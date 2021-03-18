@@ -25,10 +25,10 @@
                 android:background="@drawable/border"
                 android:orientation="horizontal">
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_picture_detail"
                     android:layout_margin="10dp"
                     android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/andrew_nesbitt"/>
+                    android:layout_height="60dp" />
                 <LinearLayout
                     android:layout_marginLeft="13dp"
                     android:layout_width="match_parent"
@@ -159,6 +159,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/following_button"
                 android:layout_width="357dp"
                 android:layout_height="37dp"
                 android:layout_gravity="center"
@@ -171,7 +172,6 @@
                     android:src="@drawable/check"/>
                 <TextView
                     android:layout_marginLeft="10dp"
-                    android:id="@+id/following_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/following"

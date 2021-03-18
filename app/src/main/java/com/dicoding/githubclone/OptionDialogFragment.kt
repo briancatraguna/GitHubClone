@@ -37,12 +37,12 @@ class OptionDialogFragment : DialogFragment(),View.OnClickListener {
         when (v?.id){
             R.id.share_button -> {
                 activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
-                Toast.makeText(context,"Shared", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Shared!", Toast.LENGTH_SHORT).show()
 
             }
             R.id.report_button -> {
                 activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
-                Toast.makeText(context,"Reported", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Reported to GitHub. We'll review your report shortly.", Toast.LENGTH_SHORT).show()
 
             }
             R.id.kancel_button -> {

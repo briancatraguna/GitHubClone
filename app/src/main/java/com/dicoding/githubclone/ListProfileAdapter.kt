@@ -37,6 +37,11 @@ class ListProfileAdapter(private val listProfile: ArrayList<Profiles>):RecyclerV
         holder.itemView.setOnClickListener{
             val context = holder.itemView.context
             val detailIntent: Intent = Intent(context,ProfilePage::class.java)
+            detailIntent.putExtra(ProfilePage.EXTRA_FULL_NAME,profile.fullName)
+            detailIntent.putExtra(ProfilePage.EXTRA_USERNAME,profile.username)
+            detailIntent.putExtra(ProfilePage.EXTRA_BIO,profile.bio)
+            detailIntent.putExtra(ProfilePage.EXTRA_PICTURE,profile.profilePicture)
+
             context.startActivity(detailIntent)
         }
     }
