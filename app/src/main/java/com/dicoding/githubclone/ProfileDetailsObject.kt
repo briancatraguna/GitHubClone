@@ -182,5 +182,59 @@ object ProfileDetailsObject {
             return programLanguageVectorDetail
         }
 
+    val repositoriesNumber: Map<String,String>
+        get(){
+            val repoNumber = mapOf(
+                    "mikermcneil" to "212",
+                    "jonathanong" to "60",
+                    "alexcrichton" to "407",
+                    "nelsonic" to "299",
+                    "bebraw" to "183",
+                    "ornicar" to "380",
+                    "egoist" to "722",
+                    "taylorotwell" to "18",
+                    "andrew" to "298",
+                    "fabpot" to "55",
+                    "feryandi" to "33"
+            )
+            return repoNumber
+        }
+
+    val starredNumber: Map<String,String>
+        get(){
+            val starNumber = mapOf(
+                    "mikermcneil" to "286",
+                    "jonathanong" to "148",
+                    "alexcrichton" to "34",
+                    "nelsonic" to "3.434",
+                    "bebraw" to "2.596",
+                    "ornicar" to "662",
+                    "egoist" to "2.988",
+                    "taylorotwell" to "195",
+                    "andrew" to "6.112",
+                    "fabpot" to "157",
+                    "feryandi" to "75"
+            )
+            return starNumber
+        }
+
+    val organizationsNumber: Map<String,String>
+        get(){
+            val orgNumber = mapOf(
+                    "mikermcneil" to "5",
+                    "jonathanong" to "4",
+                    "alexcrichton" to "4",
+                    "nelsonic" to "4",
+                    "bebraw" to "3",
+                    "ornicar" to "0",
+                    "egoist" to "3",
+                    "taylorotwell" to "2",
+                    "andrew" to "10",
+                    "fabpot" to "9",
+                    "feryandi" to "1"
+            )
+            return orgNumber
+        }
+
 
 }

@@ -31,6 +31,10 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
     private lateinit var programmingLanguageTextView: TextView
     private lateinit var programmingLanguageVector: ImageView
 
+    private lateinit var repoNumber: TextView
+    private lateinit var starredNumber: TextView
+    private lateinit var organizationNumber: TextView
+
     companion object {
         const val EXTRA_PROFILE = "extra_profile"
         const val EXTRA_PICTURE = "extra_picture"
@@ -98,6 +102,10 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
         if (programmingLanguageLogo != null) {
             programmingLanguageVector.setImageResource(programmingLanguageLogo)
         }
+
+        repoNumber = findViewById(R.id.repo_number)
+        starredNumber = findViewById(R.id.starred_number)
+        organizationNumber = findViewById(R.id.organizations_number)
 
     }
 

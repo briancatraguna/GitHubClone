@@ -293,6 +293,7 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:clickable="true"
                 android:id="@+id/repositories_button"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
@@ -330,6 +331,7 @@
 
             </LinearLayout>
             <LinearLayout
+                android:clickable="true"
                 android:id="@+id/starred_button"
                 android:layout_marginTop="-2dp"
                 android:orientation="horizontal"
@@ -367,6 +369,7 @@
 
             </LinearLayout>
             <LinearLayout
+                android:clickable="true"
                 android:id="@+id/organizations_button"
                 android:layout_marginTop="-2dp"
                 android:orientation="horizontal"
