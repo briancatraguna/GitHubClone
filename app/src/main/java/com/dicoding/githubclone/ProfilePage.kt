@@ -23,6 +23,12 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
     private lateinit var linkDetail: TextView
     private lateinit var followStatsDetail: TextView
 
+    private lateinit var repositoryNameTextView: TextView
+    private lateinit var repositoryDescriptionTextView: TextView
+    private lateinit var numStarsTextView: TextView
+    private lateinit var programmingLanguageTextView: TextView
+    private lateinit var programmingLanguageVector: ImageView
+
     companion object {
         const val EXTRA_PROFILE = "extra_profile"
         const val EXTRA_PICTURE = "extra_picture"
@@ -67,6 +73,24 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
         val follStatsDetail: String? = ProfileDetailsObject.followStatsDetail[profileData.username]
         followStatsDetail = findViewById(R.id.follow_stats_detail)
         followStatsDetail.text = follStatsDetail
+
+        val repositoryName: String? = ProfileDetailsObject.repositoryNameDetails[profileData.username]
+        repositoryNameTextView = findViewById(R.id.repository_name)
+        repositoryNameTextView.text = repositoryName
+        val repositoryDescription: String? = ProfileDetailsObject.repositoryDescriptionDetails[profileData.username]
+        repositoryDescriptionTextView = findViewById(R.id.repository_description)
+        repositoryDescriptionTextView.text = repositoryDescription
+        val numOfStars: String? = ProfileDetailsObject.starNumberDetails[profileData.username]
+        numStarsTextView = findViewById(R.id.number_of_stars)
+        numStarsTextView.text = numOfStars
+        val programmingLanguage: String? = ProfileDetailsObject.programmingLanguageDetails[profileData.username]
+        programmingLanguageTextView = findViewById(R.id.programming_language)
+        programmingLanguageTextView.text = programmingLanguage
+        val programmingLanguageLogo: Int? = ProfileDetailsObject.programmingLanguageVectorDetails[profileData.username]
+        programmingLanguageVector = findViewById(R.id.program_language_vector)
+        if (programmingLanguageLogo != null) {
+            programmingLanguageVector.setImageResource(programmingLanguageLogo)
+        }
 
     }
 
