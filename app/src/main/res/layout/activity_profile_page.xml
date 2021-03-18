@@ -26,8 +26,8 @@
                 android:orientation="horizontal">
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_margin="10dp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/andrew_nesbitt"/>
                 <LinearLayout
                     android:layout_marginLeft="13dp"
@@ -36,12 +36,12 @@
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/full_name_detail"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="12dp"
                         android:fontFamily="@font/freesansbold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="22dp"
                         android:text="@string/full_name"/>
                     <TextView
                         android:id="@+id/username_detail"
@@ -49,6 +49,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/lighter_black"
+                        android:textSize="18dp"
                         android:text="@string/username"/>
                 </LinearLayout>
             </LinearLayout>
@@ -63,7 +64,125 @@
                 android:paddingTop="7dp"
                 android:paddingBottom="7dp"
                 android:textColor="@color/lighter_black"
+                android:textSize="18dp"
                 android:fontFamily="@font/freesans"/>
+
+            <TextView
+                android:id="@+id/bio_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="22dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:textColor="@color/black"
+                android:text="@string/bio"
+                android:textSize="18dp"/>
+
+            <RelativeLayout
+                android:paddingLeft="22dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/company_vector"
+                    android:src="@drawable/company"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:id="@+id/company_detail"
+                    android:text="@string/company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="@font/freesans"
+                    android:textColor="@color/light_black"
+                    android:layout_toRightOf="@id/company_vector"/>
+                <ImageView
+                    android:layout_marginLeft="50dp"
+                    android:id="@+id/location_vector"
+                    android:src="@drawable/location"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@id/company_detail"/>
+                <TextView
+                    android:id="@+id/location_detail"
+                    android:text="@string/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="@font/freesans"
+                    android:textColor="@color/light_black"
+                    android:layout_toRightOf="@id/location_vector"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:paddingLeft="22dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/link_vector"
+                    android:src="@drawable/link"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:id="@+id/link_detail"
+                    android:text="@string/link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="@font/freesans"
+                    android:textColor="@color/light_black"
+                    android:layout_toRightOf="@id/link_vector"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:paddingLeft="22dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/person_vector"
+                    android:src="@drawable/person"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+                <TextView
+                    android:id="@+id/follow_stats_detail"
+                    android:text="@string/follow_stats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="@font/freesans"
+                    android:textColor="@color/light_black"
+                    android:layout_toRightOf="@id/person_vector"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="357dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:background="@drawable/border">
+                <ImageView
+                    android:layout_marginLeft="120dp"
+                    android:id="@+id/check_vector"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/check"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/following_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/following"
+                    android:textColor="@color/lighter_black"
+                    android:fontFamily="@font/ralewaymedium"
+                    android:layout_toRightOf="@+id/check_vector"/>
+
+            </RelativeLayout>
+
+
+
 
 
         </LinearLayout>
