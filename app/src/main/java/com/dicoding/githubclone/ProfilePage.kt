@@ -26,20 +26,11 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.more_button -> {
-                val mFragmentManager = supportFragmentManager
-                val optionDialogFragment = OptionDialogFragment()
-                val fragment =
-                    mFragmentManager.findFragmentByTag(OptionDialogFragment::class.java.simpleName)
-                if (fragment !is OptionDialogFragment) {
-                    mFragmentManager
-                        .beginTransaction()
-                        .add(R.id.frame_container, optionDialogFragment, OptionDialogFragment::class.java.simpleName)
-                        .commit()
-                }
+                val myDialogFragment: OptionDialogFragment = OptionDialogFragment()
+                myDialogFragment.show(supportFragmentManager,"My Fragment")
             }
             R.id.back_to_main -> {
-                val backToMainIntent: Intent = Intent(this,MainActivity::class.java)
-                startActivity(backToMainIntent)
+                finish()
             }
         }
     }
