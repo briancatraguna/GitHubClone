@@ -13,4 +13,11 @@
     <string name="share">Share</string>
     <string name="report">Report</string>
     <string name="cancel">Cancel</string>
+
+    //Details
+    <string name="company">Company Name</string>
+    <string name="location">Location Name</string>
+    <string name="link">Link</string>
+    <string name="follow_stats">Follower Following</string>
+    <string name="description">Description</string>
 </resources>
