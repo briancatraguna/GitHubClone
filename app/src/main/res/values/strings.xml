@@ -20,4 +20,9 @@
     <string name="link">Link</string>
     <string name="follow_stats">Follower Following</string>
     <string name="description">Description</string>
+    <string name="pinned">Pinned</string>
+    <string name="repository_name">repository_name</string>
+    <string name="repository_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="number_of_stars">20.000</string>
+    <string name="program_language">Language</string>
 </resources>

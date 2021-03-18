@@ -163,6 +163,7 @@
                 android:layout_width="357dp"
                 android:layout_height="37dp"
                 android:layout_gravity="center"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/border">
                 <ImageView
                     android:layout_marginLeft="120dp"
@@ -178,16 +179,120 @@
                     android:textColor="@color/lighter_black"
                     android:fontFamily="@font/ralewaymedium"
                     android:layout_toRightOf="@+id/check_vector"/>
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:background="@drawable/border"
+                android:paddingLeft="22dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="22dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/pin_vector"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/pin"/>
+                <TextView
+                    android:text="@string/pinned"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/pin_vector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ralewaysemibold"/>
+
+                <LinearLayout
+                    android:layout_alignTop="@+id/pin_vector"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/border"
+                    android:layout_width="340dp"
+                    android:layout_height="210dp"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/repo_picture"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/andrew_nesbitt"/>
+                        <TextView
+                            android:layout_toRightOf="@id/repo_picture"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/username"
+                            android:textColor="@color/light_black"
+                            android:fontFamily="@font/ralewaymedium" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/repository_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/repository_name"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/repository_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/repository_description"
+                        android:textSize="18dp"
+                        android:textColor="@color/lighter_black"/>
+
+                    <RelativeLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="bottom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/star_vector"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/star"/>
+                        <TextView
+                            android:id="@+id/number_of_stars"
+                            android:layout_toRightOf="@+id/star_vector"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/number_of_stars"
+                            android:textColor="@color/light_black"
+                            android:fontFamily="@font/ralewaymedium"/>
+                        <ImageView
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/number_of_stars"
+                            android:id="@+id/program_language_vector"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/html"/>
+                        <TextView
+                            android:id="@+id/programming_language"
+                            android:layout_toRightOf="@+id/program_language_vector"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/program_language"
+                            android:textColor="@color/light_black"
+                            android:fontFamily="@font/ralewaymedium"/>
+                    </RelativeLayout>
+                </LinearLayout>
             </RelativeLayout>
 
 
-
-
-
         </LinearLayout>
-
-
     </ScrollView>
-
 </LinearLayout>
