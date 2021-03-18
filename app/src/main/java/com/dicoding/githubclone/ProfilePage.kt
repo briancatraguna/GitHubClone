@@ -3,10 +3,7 @@ package com.dicoding.githubclone
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 class ProfilePage : AppCompatActivity(),View.OnClickListener {
     private lateinit var moreButton: ImageView
@@ -34,6 +31,10 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
     private lateinit var repoNumber: TextView
     private lateinit var starredNumber: TextView
     private lateinit var organizationNumber: TextView
+
+    private lateinit var repositoriesButton: LinearLayout
+    private lateinit var starredButton: LinearLayout
+    private lateinit var organizationsButton: LinearLayout
 
     companion object {
         const val EXTRA_PROFILE = "extra_profile"
@@ -104,9 +105,21 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
         }
 
         repoNumber = findViewById(R.id.repo_number)
+        val repoNumberString = ProfileDetailsObject.repositoriesNumber[profileData.username]
+        repoNumber.text = repoNumberString
         starredNumber = findViewById(R.id.starred_number)
+        val starredNumberString = ProfileDetailsObject.starredNumber[profileData.username]
+        starredNumber.text = starredNumberString
         organizationNumber = findViewById(R.id.organizations_number)
+        val organizationNumberString = ProfileDetailsObject.organizationsNumber[profileData.username]
+        organizationNumber.text = organizationNumberString
 
+        repositoriesButton = findViewById(R.id.repositories_button)
+        repositoriesButton.setOnClickListener(this)
+        starredButton = findViewById(R.id.starred_button)
+        starredButton.setOnClickListener(this)
+        organizationsButton = findViewById(R.id.organizations_button)
+        organizationsButton.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -120,6 +133,9 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
             }
             R.id.following_button -> {
                 Toast.makeText(applicationContext,"Unable to change following status.",Toast.LENGTH_SHORT).show()
+            }
+            R.id.repositories_button -> {
+                Toast.makeText(applicationContext,"${}",Toast.LENGTH_SHORT).show()
             }
         }
     }
