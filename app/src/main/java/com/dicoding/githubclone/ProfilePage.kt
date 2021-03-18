@@ -52,6 +52,21 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
         followButton = findViewById(R.id.following_button)
         followButton.setOnClickListener(this)
 
+        val descDetail: String? = ProfileDetailsObject.descriptionDetail[profileData.username]
+        descriptionDetail = findViewById(R.id.description_detail)
+        descriptionDetail.text = descDetail
+        val compDetail: String? = ProfileDetailsObject.companyDetail[profileData.username]
+        companyDetail = findViewById(R.id.company_detail)
+        companyDetail.text = compDetail
+        val locDetail: String? = ProfileDetailsObject.locationDetail[profileData.username]
+        locationDetail = findViewById(R.id.location_detail)
+        locationDetail.text = locDetail
+        val lkDetail: String? = ProfileDetailsObject.linkDetail[profileData.username]
+        linkDetail = findViewById(R.id.link_detail)
+        linkDetail.text = lkDetail
+        val follStatsDetail: String? = ProfileDetailsObject.followStatsDetail[profileData.username]
+        followStatsDetail = findViewById(R.id.follow_stats_detail)
+        followStatsDetail.text = follStatsDetail
 
     }
 

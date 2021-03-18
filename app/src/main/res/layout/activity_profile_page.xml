@@ -59,7 +59,7 @@
                 android:text="@string/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/darker_white"
+                android:background="@color/darker_white_lighter"
                 android:paddingLeft="22dp"
                 android:paddingTop="7dp"
                 android:paddingBottom="7dp"

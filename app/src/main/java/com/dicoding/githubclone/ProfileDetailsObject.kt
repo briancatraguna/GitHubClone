@@ -32,7 +32,7 @@ object ProfileDetailsObject {
                     "taylorotwell" to "Laravel",
                     "andrew" to " - ",
                     "fabpot" to "Symfony/Blackfire",
-                    "feryandi" to "Carnegie Mellon University Silicon Valley"
+                    "feryandi" to "Carnegie Mellon University"
             )
             return compDetail
         }
