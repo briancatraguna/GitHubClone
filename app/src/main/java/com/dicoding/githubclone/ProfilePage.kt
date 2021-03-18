@@ -23,6 +23,8 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
     private lateinit var linkDetail: TextView
     private lateinit var followStatsDetail: TextView
 
+    private lateinit var repoPicture: ImageView
+    private lateinit var repoUsername: TextView
     private lateinit var repositoryNameTextView: TextView
     private lateinit var repositoryDescriptionTextView: TextView
     private lateinit var numStarsTextView: TextView
@@ -74,6 +76,11 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
         followStatsDetail = findViewById(R.id.follow_stats_detail)
         followStatsDetail.text = follStatsDetail
 
+
+        repoPicture = findViewById(R.id.repo_picture)
+        repoPicture.setImageResource(pictureData)
+        repoUsername = findViewById(R.id.username_repo)
+        repoUsername.text = profileData.username.toString()
         val repositoryName: String? = ProfileDetailsObject.repositoryNameDetails[profileData.username]
         repositoryNameTextView = findViewById(R.id.repository_name)
         repositoryNameTextView.text = repositoryName

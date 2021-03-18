@@ -210,7 +210,7 @@
                     android:layout_marginLeft="8dp"
                     android:background="@drawable/border"
                     android:layout_width="340dp"
-                    android:layout_height="210dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <RelativeLayout
                         android:layout_marginTop="5dp"
@@ -220,17 +220,18 @@
                         <ImageView
                             android:id="@+id/repo_picture"
                             android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/andrew_nesbitt"/>
+                            android:layout_height="20dp" />
+
                         <TextView
-                            android:layout_toRightOf="@id/repo_picture"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="3dp"
+                            android:id="@+id/username_repo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_toRightOf="@id/repo_picture"
+                            android:fontFamily="@font/ralewaymedium"
                             android:text="@string/username"
-                            android:textColor="@color/light_black"
-                            android:fontFamily="@font/ralewaymedium" />
+                            android:textColor="@color/light_black" />
                     </RelativeLayout>
 
                     <TextView
@@ -252,7 +253,7 @@
                         android:textColor="@color/lighter_black"/>
 
                     <RelativeLayout
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="30dp"
                         android:layout_gravity="bottom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
@@ -291,7 +292,33 @@
                 </LinearLayout>
             </RelativeLayout>
 
+            <LinearLayout
+                android:id="@+id/repositories_button"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/border">
 
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/starred_button"
+                android:layout_marginTop="-2dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/border">
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/organizations_button"
+                android:layout_marginTop="-2dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/border">
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
