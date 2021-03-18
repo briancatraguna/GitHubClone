@@ -24,9 +24,7 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
     private lateinit var followStatsDetail: TextView
 
     companion object {
-        const val EXTRA_FULL_NAME = "extra_full_name"
-        const val EXTRA_USERNAME = "extra_username"
-        const val EXTRA_BIO = "extra_bio"
+        const val EXTRA_PROFILE = "extra_profile"
         const val EXTRA_PICTURE = "extra_picture"
     }
 
@@ -35,19 +33,17 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_page)
 
-        val profilePicture = intent.getIntExtra(EXTRA_PICTURE,0)
-        val fullName = intent.getStringExtra(EXTRA_FULL_NAME)
-        val username = intent.getStringExtra(EXTRA_USERNAME)
-        val bio = intent.getStringExtra(EXTRA_BIO)
+        val profileData = intent.getParcelableExtra<Profiles>(EXTRA_PROFILE) as Profiles
+        val pictureData = intent.getIntExtra(EXTRA_PICTURE,0)
 
         profilePictureDetail = findViewById(R.id.profile_picture_detail)
-        profilePictureDetail.setImageResource(profilePicture)
+        profilePictureDetail.setImageResource(pictureData)
         fullNameDetail = findViewById(R.id.full_name_detail)
-        fullNameDetail.text = fullName.toString()
+        fullNameDetail.text = profileData.fullName.toString()
         usernameDetail = findViewById(R.id.username_detail)
-        usernameDetail.text = username.toString()
+        usernameDetail.text = profileData.username.toString()
         bioDetail = findViewById(R.id.bio_detail)
-        bioDetail.text = bio.toString()
+        bioDetail.text = profileData.bio.toString()
 
         moreButton = findViewById(R.id.more_button)
         moreButton.setOnClickListener(this)

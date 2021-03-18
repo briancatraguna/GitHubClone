@@ -1,6 +1,7 @@
 package com.dicoding.githubclone
 
 import android.content.Intent
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,13 +36,18 @@ class ListProfileAdapter(private val listProfile: ArrayList<Profiles>):RecyclerV
         holder.tvBio.text = profile.bio
 
         holder.itemView.setOnClickListener{
+            val profileData = Profiles(
+                    profile.fullName,
+                    profile.username,
+                    profile.bio,
+                    profile.profilePicture
+            )
+
+
             val context = holder.itemView.context
             val detailIntent: Intent = Intent(context,ProfilePage::class.java)
-            detailIntent.putExtra(ProfilePage.EXTRA_FULL_NAME,profile.fullName)
-            detailIntent.putExtra(ProfilePage.EXTRA_USERNAME,profile.username)
-            detailIntent.putExtra(ProfilePage.EXTRA_BIO,profile.bio)
+            detailIntent.putExtra(ProfilePage.EXTRA_PROFILE,profileData)
             detailIntent.putExtra(ProfilePage.EXTRA_PICTURE,profile.profilePicture)
-
             context.startActivity(detailIntent)
         }
     }
