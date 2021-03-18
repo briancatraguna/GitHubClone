@@ -292,7 +292,7 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:clickable="true"
                 android:id="@+id/repositories_button"
                 android:layout_marginTop="10dp"
@@ -301,11 +301,13 @@
                 android:layout_height="50dp"
                 android:background="@drawable/border">
                 <ImageView
+                    android:id="@+id/repository_logo"
                     android:layout_marginLeft="10dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/repositories"/>
                 <TextView
+                    android:layout_toRightOf="@+id/repository_logo"
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="18dp"
@@ -318,19 +320,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
-                    android:layout_marginLeft="180dp"
+                    android:layout_marginLeft="300dp"
                     android:text="@string/number"
                     android:layout_marginTop="3dp"
                     android:textColor="@color/light_black"/>
                 <ImageView
+                    android:id="@+id/repository_arrow"
                     android:layout_marginTop="6dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="350dp"
                     android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
-
-            </LinearLayout>
-            <LinearLayout
+            </RelativeLayout>
+            <RelativeLayout
                 android:clickable="true"
                 android:id="@+id/starred_button"
                 android:layout_marginTop="-2dp"
@@ -339,11 +341,13 @@
                 android:layout_height="50dp"
                 android:background="@drawable/border">
                 <ImageView
+                    android:id="@+id/star_logo"
                     android:layout_marginLeft="10dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/starred"/>
                 <TextView
+                    android:layout_toRightOf="@+id/star_logo"
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="18dp"
@@ -356,7 +360,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
-                    android:layout_marginLeft="221dp"
+                    android:layout_marginLeft="300dp"
                     android:text="@string/number"
                     android:layout_marginTop="3dp"
                     android:textColor="@color/light_black"/>
@@ -364,11 +368,11 @@
                     android:layout_marginTop="6dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="350dp"
                     android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
 
-            </LinearLayout>
-            <LinearLayout
+            </RelativeLayout>
+            <RelativeLayout
                 android:clickable="true"
                 android:id="@+id/organizations_button"
                 android:layout_marginTop="-2dp"
@@ -377,11 +381,13 @@
                 android:layout_height="50dp"
                 android:background="@drawable/border">
                 <ImageView
+                    android:id="@+id/organization_logo"
                     android:layout_marginLeft="10dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/organizations"/>
                 <TextView
+                    android:layout_toRightOf="@+id/organization_logo"
                     android:layout_marginTop="3dp"
                     android:layout_marginLeft="10dp"
                     android:textSize="18dp"
@@ -394,7 +400,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
-                    android:layout_marginLeft="170dp"
+                    android:layout_marginLeft="300dp"
                     android:text="@string/number"
                     android:layout_marginTop="3dp"
                     android:textColor="@color/light_black"/>
@@ -402,10 +408,10 @@
                     android:layout_marginTop="6dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="350dp"
                     android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
 
-            </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

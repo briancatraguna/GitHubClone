@@ -32,9 +32,14 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
     private lateinit var starredNumber: TextView
     private lateinit var organizationNumber: TextView
 
-    private lateinit var repositoriesButton: LinearLayout
-    private lateinit var starredButton: LinearLayout
-    private lateinit var organizationsButton: LinearLayout
+    private lateinit var repositoriesButton: RelativeLayout
+    private lateinit var starredButton: RelativeLayout
+    private lateinit var organizationsButton: RelativeLayout
+
+    private lateinit var username: String
+    private lateinit var repositories: String
+    private lateinit var stars: String
+    private lateinit var organizations: String
 
     companion object {
         const val EXTRA_PROFILE = "extra_profile"
@@ -120,6 +125,11 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
         starredButton.setOnClickListener(this)
         organizationsButton = findViewById(R.id.organizations_button)
         organizationsButton.setOnClickListener(this)
+
+        username = profileData.username.toString()
+        repositories = repoNumberString.toString()
+        stars = starredNumberString.toString()
+        organizations = organizationNumberString.toString()
     }
 
     override fun onClick(v: View?) {
@@ -135,7 +145,16 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
                 Toast.makeText(applicationContext,"Unable to change following status.",Toast.LENGTH_SHORT).show()
             }
             R.id.repositories_button -> {
-                Toast.makeText(applicationContext,"${}",Toast.LENGTH_SHORT).show()
+                var message1: String = "$username has $repositories repositories!"
+                Toast.makeText(applicationContext,message1,Toast.LENGTH_SHORT).show()
+            }
+            R.id.starred_button -> {
+                var message2: String = "$username has $stars stars!"
+                Toast.makeText(applicationContext,message2,Toast.LENGTH_SHORT).show()
+            }
+            R.id.organizations_button -> {
+                var message3: String = "$username is in $organizations organizations!"
+                Toast.makeText(applicationContext,message3,Toast.LENGTH_SHORT).show()
             }
         }
     }
