@@ -92,4 +92,95 @@ object ProfileDetailsObject {
             return followStatsDetail
         }
 
+    val repositoryNameDetails: Map<String,String>
+        get(){
+            val repositoryNameDetail = mapOf(
+                    "mikermcneil" to "sail",
+                    "jonathanong" to "koa",
+                    "alexcrichton" to "rust-ffi-examples",
+                    "nelsonic" to "start-here",
+                    "bebraw" to "react-book",
+                    "ornicar" to "lila",
+                    "egoist" to "saber",
+                    "taylorotwell" to "laravel",
+                    "andrew" to "octobox",
+                    "fabpot" to "symfony",
+                    "feryandi" to "PilahPilihPilpres"
+            )
+            return repositoryNameDetail
+        }
+
+    val repositoryDescriptionDetails: Map<String,String>
+        get(){
+            val repositoryDescriptionDetail = mapOf(
+                    "mikermcneil" to "Realtime MVC Framework for Node.js",
+                    "jonathanong" to "Expressive middleware for node.js using ES2017 async functions",
+                    "alexcrichton" to "FFI examples written in Rust",
+                    "nelsonic" to "\uD83D\uDCA1 A Quick-start Guide for People who want to dwyl ❤️ ✅",
+                    "bebraw" to "From apprentice to master (CC BY-NC-ND)",
+                    "ornicar" to "♞ lichess.org: the forever free, adless and open source chess server ♞",
+                    "egoist" to "()==[:::::::::::::> Build static sites in Vue.js, without the hassle",
+                    "taylorotwell" to "A PHP framework for web artisans",
+                    "andrew" to "\uD83D\uDCEEUntangle your GitHub Notifications",
+                    "fabpot" to "The Symfony PHP framework",
+                    "feryandi" to "A quiz based application, a social project, to create awareness and help Indonesian to choose their next president (in 2019) wisely solely based on their political agendas and aspirations."
+            )
+            return repositoryDescriptionDetail
+        }
+
+    val starNumberDetails: Map<String,String>
+        get(){
+            val starNumberDetail = mapOf(
+                    "mikermcneil" to "21.869",
+                    "jonathanong" to "30.888",
+                    "alexcrichton" to "831",
+                    "nelsonic" to "1.390",
+                    "bebraw" to "2.010",
+                    "ornicar" to "8.596",
+                    "egoist" to "2.059",
+                    "taylorotwell" to "64.331",
+                    "andrew" to "4.027",
+                    "fabpot" to "24.782",
+                    "feryandi" to "55"
+            )
+            return starNumberDetail
+        }
+
+    val programmingLanguageDetails: Map<String,String>
+        get(){
+            val programLanguageDetail = mapOf(
+                    "mikermcneil" to "JavaScript",
+                    "jonathanong" to "JavaScript",
+                    "alexcrichton" to "Makefile",
+                    "nelsonic" to "Unknown",
+                    "bebraw" to "JavaScript",
+                    "ornicar" to "Scala",
+                    "egoist" to "JavaScript",
+                    "taylorotwell" to "PHP",
+                    "andrew" to "Ruby",
+                    "fabpot" to "PHP",
+                    "feryandi" to "JavaScript"
+            )
+            return programLanguageDetail
+        }
+
+    val programmingLanguageVectorDetails: Map<String,Int>
+        get(){
+            val programLanguageVectorDetail = mapOf(
+                    "mikermcneil" to R.drawable.javascript,
+                    "jonathanong" to R.drawable.javascript,
+                    "alexcrichton" to R.drawable.makefile,
+                    "nelsonic" to R.drawable.unknown,
+                    "bebraw" to R.drawable.javascript,
+                    "ornicar" to R.drawable.scala,
+                    "egoist" to R.drawable.javascript,
+                    "taylorotwell" to R.drawable.php,
+                    "andrew" to R.drawable.ruby,
+                    "fabpot" to R.drawable.php,
+                    "feryandi" to R.drawable.javascript
+            )
+            return programLanguageVectorDetail
+        }
+
+
 }

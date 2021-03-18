@@ -276,8 +276,7 @@
                             android:layout_toRightOf="@+id/number_of_stars"
                             android:id="@+id/program_language_vector"
                             android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/html"/>
+                            android:layout_height="20dp"/>
                         <TextView
                             android:id="@+id/programming_language"
                             android:layout_toRightOf="@+id/program_language_vector"
