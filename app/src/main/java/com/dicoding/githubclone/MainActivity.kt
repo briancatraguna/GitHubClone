@@ -1,11 +1,7 @@
 package com.dicoding.githubclone
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +15,10 @@ class MainActivity : AppCompatActivity(){
     private lateinit var rvProfiles: RecyclerView
 
     private var list: ArrayList<Profiles> = arrayListOf()
+
+    companion object {
+        private val TAG = MainActivity::class.java.simpleName
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
