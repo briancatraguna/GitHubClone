@@ -8,20 +8,27 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.githubclone.databinding.ActivityMainBinding
+import com.dicoding.githubclone.databinding.ToolbarBinding
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
-    private lateinit var backButton: RelativeLayout
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var toolbarBinding: ToolbarBinding
+
     private lateinit var rvProfiles: RecyclerView
+
     private var list: ArrayList<Profiles> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        backButton = findViewById(R.id.back_group)
+        val backButton = toolbarBinding.backGroup
         backButton.setOnClickListener(this)
 
-        rvProfiles = findViewById(R.id.rv_github_profiles)
+        rvProfiles = binding.rvGithubProfiles
         rvProfiles.setHasFixedSize(true)
 
         list.addAll(ProfilesData.listData)
