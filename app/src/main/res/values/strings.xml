@@ -1,8 +1,11 @@
 <resources>
     //Action Bar
     <string name="app_name">App Name</string>
-    <string name="following">Following</string>
+    <string name="home">Home</string>
     <string name="back">Back</string>
+
+    //Homepage
+    <string name="explore">Explore Softwares with GitHub Mobile!</string>
 
     //RecyclerView
     <string name="full_name">Full Name</string>
@@ -19,6 +22,7 @@
     <string name="location">Location Name</string>
     <string name="link">Link</string>
     <string name="follow_stats">Follower Following</string>
+    <string name="following">Following</string>
     <string name="description">Description</string>
     <string name="pinned">Pinned</string>
     <string name="repository_name">repository_name</string>

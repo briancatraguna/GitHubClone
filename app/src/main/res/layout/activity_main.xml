@@ -10,6 +10,39 @@
     <include layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="-2dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/border">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/professorcat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/ralewaysemibold"
+            android:text="@string/explore"
+            android:textColor="@color/light_black"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.432"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:clickable="true"
         android:id="@+id/rv_github_profiles"
