@@ -8,7 +8,8 @@
     android:id="@+id/frame_container"
     tools:context=".ProfilePage">
 
-    <include layout="@layout/toolbar_detail"/>
+    <include layout="@layout/toolbar_detail"
+        android:id="@+id/toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"

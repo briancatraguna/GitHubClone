@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.githubclone.databinding.ActivityMainBinding
-import com.dicoding.githubclone.databinding.ToolbarBinding
 
 class MainActivity : AppCompatActivity(){
 

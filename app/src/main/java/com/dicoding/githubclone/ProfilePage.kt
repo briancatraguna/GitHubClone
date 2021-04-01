@@ -4,42 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import com.dicoding.githubclone.databinding.ActivityProfilePageBinding
 
 class ProfilePage : AppCompatActivity(),View.OnClickListener {
-    private lateinit var moreButton: ImageView
-    private lateinit var backToMain: RelativeLayout
-    private lateinit var followButton: RelativeLayout
-
-    private lateinit var profilePictureDetail: ImageView
-    private lateinit var fullNameDetail: TextView
-    private lateinit var usernameDetail: TextView
-    private lateinit var descriptionDetail: TextView
-    private lateinit var bioDetail: TextView
-    private lateinit var companyDetail: TextView
-    private lateinit var locationDetail: TextView
-    private lateinit var linkDetail: TextView
-    private lateinit var followStatsDetail: TextView
-
-    private lateinit var repoPicture: ImageView
-    private lateinit var repoUsername: TextView
-    private lateinit var repositoryNameTextView: TextView
-    private lateinit var repositoryDescriptionTextView: TextView
-    private lateinit var numStarsTextView: TextView
-    private lateinit var programmingLanguageTextView: TextView
-    private lateinit var programmingLanguageVector: ImageView
-
-    private lateinit var repoNumber: TextView
-    private lateinit var starredNumber: TextView
-    private lateinit var organizationNumber: TextView
-
-    private lateinit var repositoriesButton: RelativeLayout
-    private lateinit var starredButton: RelativeLayout
-    private lateinit var organizationsButton: RelativeLayout
 
     private lateinit var username: String
     private lateinit var repositories: String
     private lateinit var stars: String
     private lateinit var organizations: String
+
+    private lateinit var binding: ActivityProfilePageBinding
 
     companion object {
         const val EXTRA_PROFILE = "extra_profile"
@@ -49,81 +23,81 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile_page)
+        binding = ActivityProfilePageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val profileData = intent.getParcelableExtra<Profiles>(EXTRA_PROFILE) as Profiles
         val pictureData = intent.getIntExtra(EXTRA_PICTURE,0)
 
-        profilePictureDetail = findViewById(R.id.profile_picture_detail)
+        val profilePictureDetail = binding.profilePictureDetail
         profilePictureDetail.setImageResource(pictureData)
-        fullNameDetail = findViewById(R.id.full_name_detail)
+        val fullNameDetail = binding.fullNameDetail
         fullNameDetail.text = profileData.fullName.toString()
-        usernameDetail = findViewById(R.id.username_detail)
+        val usernameDetail = binding.usernameDetail
         usernameDetail.text = profileData.username.toString()
-        bioDetail = findViewById(R.id.bio_detail)
+        val bioDetail = binding.bioDetail
         bioDetail.text = profileData.bio.toString()
 
-        moreButton = findViewById(R.id.more_button)
+        val moreButton = binding.toolbar.moreButton
         moreButton.setOnClickListener(this)
-        backToMain = findViewById(R.id.back_to_main)
+        val backToMain = binding.toolbar.backToMain
         backToMain.setOnClickListener(this)
-        followButton = findViewById(R.id.following_button)
+        val followButton = binding.followingButton
         followButton.setOnClickListener(this)
 
         val descDetail: String? = ProfileDetailsObject.descriptionDetail[profileData.username]
-        descriptionDetail = findViewById(R.id.description_detail)
+        val descriptionDetail = binding.descriptionDetail
         descriptionDetail.text = descDetail
         val compDetail: String? = ProfileDetailsObject.companyDetail[profileData.username]
-        companyDetail = findViewById(R.id.company_detail)
+        val companyDetail = binding.companyDetail
         companyDetail.text = compDetail
         val locDetail: String? = ProfileDetailsObject.locationDetail[profileData.username]
-        locationDetail = findViewById(R.id.location_detail)
+        val locationDetail = binding.locationDetail
         locationDetail.text = locDetail
         val lkDetail: String? = ProfileDetailsObject.linkDetail[profileData.username]
-        linkDetail = findViewById(R.id.link_detail)
+        val linkDetail = binding.linkDetail
         linkDetail.text = lkDetail
         val follStatsDetail: String? = ProfileDetailsObject.followStatsDetail[profileData.username]
-        followStatsDetail = findViewById(R.id.follow_stats_detail)
+        val followStatsDetail = binding.followStatsDetail
         followStatsDetail.text = follStatsDetail
 
-
-        repoPicture = findViewById(R.id.repo_picture)
+        val repoPicture = binding.repoPicture
         repoPicture.setImageResource(pictureData)
-        repoUsername = findViewById(R.id.username_repo)
+        val repoUsername = binding.usernameRepo
         repoUsername.text = profileData.username.toString()
         val repositoryName: String? = ProfileDetailsObject.repositoryNameDetails[profileData.username]
-        repositoryNameTextView = findViewById(R.id.repository_name)
+        val repositoryNameTextView = binding.repositoryName
         repositoryNameTextView.text = repositoryName
         val repositoryDescription: String? = ProfileDetailsObject.repositoryDescriptionDetails[profileData.username]
-        repositoryDescriptionTextView = findViewById(R.id.repository_description)
+        val repositoryDescriptionTextView = binding.repositoryDescription
         repositoryDescriptionTextView.text = repositoryDescription
         val numOfStars: String? = ProfileDetailsObject.starNumberDetails[profileData.username]
-        numStarsTextView = findViewById(R.id.number_of_stars)
+        val numStarsTextView = binding.numberOfStars
         numStarsTextView.text = numOfStars
         val programmingLanguage: String? = ProfileDetailsObject.programmingLanguageDetails[profileData.username]
-        programmingLanguageTextView = findViewById(R.id.programming_language)
+        val programmingLanguageTextView = binding.programmingLanguage
         programmingLanguageTextView.text = programmingLanguage
         val programmingLanguageLogo: Int? = ProfileDetailsObject.programmingLanguageVectorDetails[profileData.username]
-        programmingLanguageVector = findViewById(R.id.program_language_vector)
+        val programmingLanguageVector = binding.programLanguageVector
         if (programmingLanguageLogo != null) {
             programmingLanguageVector.setImageResource(programmingLanguageLogo)
         }
 
-        repoNumber = findViewById(R.id.repo_number)
+        val repoNumber = binding.repoNumber
         val repoNumberString = ProfileDetailsObject.repositoriesNumber[profileData.username]
         repoNumber.text = repoNumberString
-        starredNumber = findViewById(R.id.starred_number)
+        val starredNumber = binding.starredNumber
         val starredNumberString = ProfileDetailsObject.starredNumber[profileData.username]
         starredNumber.text = starredNumberString
-        organizationNumber = findViewById(R.id.organizations_number)
+        val organizationNumber = binding.organizationsNumber
         val organizationNumberString = ProfileDetailsObject.organizationsNumber[profileData.username]
         organizationNumber.text = organizationNumberString
 
-        repositoriesButton = findViewById(R.id.repositories_button)
+        val repositoriesButton = binding.repositoriesButton
         repositoriesButton.setOnClickListener(this)
-        starredButton = findViewById(R.id.starred_button)
+        val starredButton = binding.starredButton
         starredButton.setOnClickListener(this)
-        organizationsButton = findViewById(R.id.organizations_button)
+        val organizationsButton = binding.organizationsButton
         organizationsButton.setOnClickListener(this)
 
         username = profileData.username.toString()
@@ -145,15 +119,15 @@ class ProfilePage : AppCompatActivity(),View.OnClickListener {
                 Toast.makeText(applicationContext,"Unable to change following status.",Toast.LENGTH_SHORT).show()
             }
             R.id.repositories_button -> {
-                var message1: String = "$username has $repositories repositories!"
+                val message1: String = "$username has $repositories repositories!"
                 Toast.makeText(applicationContext,message1,Toast.LENGTH_SHORT).show()
             }
             R.id.starred_button -> {
-                var message2: String = "$username has $stars stars!"
+                val message2: String = "$username has $stars stars!"
                 Toast.makeText(applicationContext,message2,Toast.LENGTH_SHORT).show()
             }
             R.id.organizations_button -> {
-                var message3: String = "$username is in $organizations organizations!"
+                val message3: String = "$username is in $organizations organizations!"
                 Toast.makeText(applicationContext,message3,Toast.LENGTH_SHORT).show()
             }
         }
