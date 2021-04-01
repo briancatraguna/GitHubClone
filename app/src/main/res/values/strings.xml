@@ -6,6 +6,11 @@
 
     //Homepage
     <string name="explore">Explore Softwares with GitHub Mobile!</string>
+    <string name="active_users">Most Active Users</string>
+
+    //Bottom nav menu
+    <string name="profile">Your Profile</string>
+    <string name="settings">Settings</string>
 
     //RecyclerView
     <string name="full_name">Full Name</string>
