@@ -15,7 +15,6 @@ class ListProfileAdapter(private val listProfile: ArrayList<Profiles>):RecyclerV
         var tvUsername: TextView = itemView.findViewById(R.id.username)
         var tvBio: TextView = itemView.findViewById(R.id.bio)
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_profile_picture)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
