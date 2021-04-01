@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(){
     }
 
     private fun showRecyclerList(){
-        rvProfiles.layoutManager = LinearLayoutManager(this)
+        rvProfiles.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         val listProfileAdapter = ListProfileAdapter(list)
         rvProfiles.adapter = listProfileAdapter
     }

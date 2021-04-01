@@ -38,7 +38,7 @@ object ProfilesData {
         "@expressjs @koajs @jshttp @pillarjs",
         "I am behind the @survivejs effort.",
         "CEO, Fleet. Creator & BDFL of sails.js",
-        "Love learning code @dwyl Systematic about sharing all knowledge/skills. Learn something new every day. https://github.com/dwyl/?q=learn",
+        "Love learning code @dwyl Systematic about sharing all knowledge/skills. Learn something new every day.",
         "Creator of @laravel.",
         "Maker of lichess.org, a hippie communist chess server for drug fueled atheists."
     )
