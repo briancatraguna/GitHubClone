@@ -21,4 +21,5 @@
     <color name="repositories">#8A62D1</color>
     <color name="starred">#F7C61A</color>
     <color name="organization">#F98634</color>
+    <color name="github_button">#2EA44F</color>
 </resources>

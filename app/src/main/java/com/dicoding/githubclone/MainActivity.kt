@@ -40,25 +40,15 @@ class MainActivity : AppCompatActivity(){
             startActivity(intent)
         }
 
+        val searchDeveloperButton = binding.searchDev
+        searchDeveloperButton.setOnClickListener{
+            val searchIntent = Intent(this@MainActivity,SearchUsers::class.java)
+            startActivity(searchIntent)
+        }
+
         list.addAll(ProfilesData.listData)
         showRecyclerList()
 
-        getGitHubData()
-    }
-
-    private fun getGitHubData() {
-        val asyncClient = AsyncHttpClient()
-        asyncClient.addHeader("Authorization","token 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")
-        asyncClient.addHeader("User-Agent","request")
-        asyncClient.get("https://api.github.com/users/briancatraguna",object :TextHttpResponseHandler(){
-            override fun onSuccess(statusCode: Int, headers: Array<out Header>?, responseString: String?) {
-                Log.d(TAG,"Connection Successful...")
-            }
-
-            override fun onFailure(statusCode: Int, headers: Array<out Header>?, responseString: String?, throwable: Throwable?) {
-                Log.d(TAG,"Connection Failed...")
-            }
-        })
     }
 
     private fun showRecyclerList(){
