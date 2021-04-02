@@ -7,6 +7,9 @@
     //Homepage
     <string name="explore">Explore Softwares with GitHub Mobile!</string>
     <string name="active_users">Most Active Users</string>
+    <string name="browse">Browse through the users with the highest commits!</string>
+    <string name="hint">Type in username...</string>
+    <string name="search">Search a Developer</string>
 
     //Bottom nav menu
     <string name="profile">Your Profile</string>
