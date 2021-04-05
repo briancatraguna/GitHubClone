@@ -8,12 +8,7 @@
     <string name="explore">Explore Softwares with GitHub Mobile!</string>
     <string name="active_users">Most Active Users</string>
     <string name="browse">Browse through the users with the highest commits!</string>
-    <string name="hint">Type in username...</string>
     <string name="search">Search a Developer</string>
-
-    //Bottom nav menu
-    <string name="profile">Your Profile</string>
-    <string name="settings">Settings</string>
 
     //RecyclerView
     <string name="full_name">Full Name</string>
@@ -22,6 +17,7 @@
 
     //SearchUser Page
     <string name="search_user_app_bar_title">Developers</string>
+    <string name="search_hint">Search</string>
 
     //Detail Action Bar
     <string name="share">Share</string>
