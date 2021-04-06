@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubClone">
-        <activity android:name=".SearchUsers"></activity>
+        <activity android:name=".DetailUser"></activity>
+        <activity android:name=".SearchUsers" />
         <activity android:name=".ProfilePage" />
         <activity android:name=".MainActivity">
             <intent-filter>

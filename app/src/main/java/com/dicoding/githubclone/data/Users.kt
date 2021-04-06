@@ -1,4 +1,4 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.data
 
 class Users {
     var login: String? = null

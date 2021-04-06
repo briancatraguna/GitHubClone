@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
+import com.dicoding.githubclone.data.Users
 import com.dicoding.githubclone.databinding.ItemRowDeveloperProfilesBinding
 
 class SearchProfileAdapter: RecyclerView.Adapter<SearchProfileAdapter.UserViewHolder>() {
@@ -21,7 +21,7 @@ class SearchProfileAdapter: RecyclerView.Adapter<SearchProfileAdapter.UserViewHo
 
     inner class UserViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         private val binding = ItemRowDeveloperProfilesBinding.bind(itemView)
-        fun bind(userItems:Users){
+        fun bind(userItems: Users){
             with(itemView){
                 binding.usernameSearch.text = userItems.login
             }
@@ -42,7 +42,10 @@ class SearchProfileAdapter: RecyclerView.Adapter<SearchProfileAdapter.UserViewHo
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.bind(list[position])
         holder.itemView.setOnClickListener{
-
+            val context = holder.itemView.context
+            val detailIntent = Intent(context,DetailUser::class.java)
+            detailIntent.putExtra(DetailUser.EXTRA_USERNAME,list[position].login)
+            context.startActivity(detailIntent)
         }
     }
 

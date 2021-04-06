@@ -3,10 +3,9 @@ package com.dicoding.githubclone
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.KeyEvent
 import android.view.View
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.githubclone.data.Users
 import com.dicoding.githubclone.databinding.ActivitySearchUsersBinding
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
@@ -36,6 +35,9 @@ class SearchUsers : AppCompatActivity() {
             showLoading(false)
             showRecyclerList()
         }
+        binding.toolbarSearchPage.backHome.setOnClickListener{
+            finish()
+        }
     }
 
     private fun showRecyclerList() {
@@ -47,7 +49,7 @@ class SearchUsers : AppCompatActivity() {
 
     private fun setListUser(username: String) {
         val listItems = ArrayList<Users>()
-        val token = "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"
+        val token = "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"
         val url = "https://api.github.com/search/users?q=$username"
 
         val client = AsyncHttpClient()
