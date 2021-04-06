@@ -40,4 +40,9 @@
     <string name="starred">Starred</string>
     <string name="Organizations">Organizations</string>
     <string name="number">33</string>
+
+
+    //Fragments
+    <string name="followers_tab_title">Followers</string>
+    <string name="following_tab_title">Following</string>
 </resources>

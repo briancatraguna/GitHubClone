@@ -55,11 +55,32 @@ class DetailUser : AppCompatActivity() {
                             .apply(RequestOptions().override(400,400))
                             .into(avatarSearchDetail)
                     }
-                    binding.fullNameSearchDetail.text = responseObject.getString("name")
-                    binding.bioSearchDetail.text = responseObject.getString("bio")
-                    binding.companySearchDetail.text = responseObject.getString("company")
-                    binding.locationSearchDetail.text = responseObject.getString("location")
-                    binding.linkSearchDetail.text = responseObject.getString("blog")
+                    if (responseObject.getString("name")=="null"){
+                        binding.fullNameSearchDetail.text = "-"
+                    } else {
+                        binding.fullNameSearchDetail.text = responseObject.getString("name")
+                    }
+                    if (responseObject.getString("bio")=="null"){
+                        binding.bioSearchDetail.text = "-"
+                    } else {
+                        binding.bioSearchDetail.text = responseObject.getString("bio")
+                    }
+                    if (responseObject.getString("company")=="null"){
+                        binding.companySearchDetail.text = "-"
+                    } else {
+                        binding.companySearchDetail.text = responseObject.getString("company")
+                    }
+                    if (responseObject.getString("location")=="null"){
+                        binding.locationSearchDetail.text = "-"
+                    } else {
+                        binding.locationSearchDetail.text = responseObject.getString("location")
+                    }
+                    if (responseObject.getString("blog")=="null"){
+                        binding.linkSearchDetail.text = "-"
+                    } else {
+                        binding.linkSearchDetail.text = responseObject.getString("blog")
+                    }
+
                     binding.repoSearchDetail.text = responseObject.getInt("public_repos").toString()
                 } catch (e:Exception){
                     Log.d("Exception",e.message.toString())
