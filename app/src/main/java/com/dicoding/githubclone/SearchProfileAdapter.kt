@@ -1,43 +1,49 @@
 package com.dicoding.githubclone
 
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.dicoding.githubclone.data.model.User
+import com.bumptech.glide.request.RequestOptions
 import com.dicoding.githubclone.databinding.ItemRowDeveloperProfilesBinding
 
 class SearchProfileAdapter: RecyclerView.Adapter<SearchProfileAdapter.UserViewHolder>() {
 
-    private val list = ArrayList<User>()
-
-    fun setList(users: ArrayList<User>){
+    private val list = ArrayList<Users>()
+    fun setData(items:ArrayList<Users>){
         list.clear()
-        list.addAll(users)
+        list.addAll(items)
         notifyDataSetChanged()
     }
 
-    inner class UserViewHolder(val binding: ItemRowDeveloperProfilesBinding):RecyclerView.ViewHolder(binding.root) {
-        fun bind(user: User){
-            binding.apply {
-                Glide.with(itemView)
-                    .load(user.avatarUrl)
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .centerCrop()
-                    .into(imgProfilePictureSearch)
-                usernameSearch.text = user.login
+    inner class UserViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+        private val binding = ItemRowDeveloperProfilesBinding.bind(itemView)
+        fun bind(userItems:Users){
+            with(itemView){
+                binding.usernameSearch.text = userItems.login
+            }
+            with(binding){
+                Glide.with(itemView.context)
+                        .load(userItems.avatar)
+                        .apply(RequestOptions().override(400,400))
+                        .into(imgProfilePictureSearch)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        val view = ItemRowDeveloperProfilesBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return UserViewHolder(view)
+        val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_row_developer_profiles,parent,false)
+        return UserViewHolder(mView)
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.bind(list[position])
+        holder.itemView.setOnClickListener{
+
+        }
     }
 
     override fun getItemCount(): Int {

@@ -18,43 +18,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.116" />
 
-    <TextView
-        android:id="@+id/full_name_search"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:fontFamily="@font/freesansbold"
-        android:text="@string/full_name"
-        android:textColor="@color/lighter_black"
-        android:textSize="18dp"
-        app:layout_constraintStart_toEndOf="@+id/img_profile_picture_search"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/username_search"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:fontFamily="@font/freesansoblique"
         android:text="@string/username"
         android:textColor="@color/light_black"
         android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_profile_picture_search"
-        app:layout_constraintTop_toBottomOf="@+id/full_name_search" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/bio_search"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:fontFamily="@font/freesans"
-        android:text="@string/bio"
-        android:textColor="@color/black"
-        android:textSize="17dp"
-        app:layout_constraintStart_toEndOf="@+id/img_profile_picture_search"
-        app:layout_constraintTop_toBottomOf="@+id/username_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
