@@ -45,4 +45,7 @@
     //Fragments
     <string name="followers_tab_title">Followers</string>
     <string name="following_tab_title">Following</string>
+
+    <string name="tab_text_1">Followers</string>
+    <string name="tab_text_2">Following</string>
 </resources>
