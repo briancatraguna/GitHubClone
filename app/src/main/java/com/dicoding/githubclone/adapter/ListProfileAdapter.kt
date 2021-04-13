@@ -1,13 +1,15 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.adapter
 
 import android.content.Intent
-import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.githubclone.R
+import com.dicoding.githubclone.activity.ProfilePageActivity
+import com.dicoding.githubclone.data.Profiles
 
 class ListProfileAdapter(private val listProfile: ArrayList<Profiles>):RecyclerView.Adapter<ListProfileAdapter.ListViewHolder>() {
     inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -44,9 +46,9 @@ class ListProfileAdapter(private val listProfile: ArrayList<Profiles>):RecyclerV
 
 
             val context = holder.itemView.context
-            val detailIntent: Intent = Intent(context,ProfilePage::class.java)
-            detailIntent.putExtra(ProfilePage.EXTRA_PROFILE,profileData)
-            detailIntent.putExtra(ProfilePage.EXTRA_PICTURE,profile.profilePicture)
+            val detailIntent: Intent = Intent(context, ProfilePageActivity::class.java)
+            detailIntent.putExtra(ProfilePageActivity.EXTRA_PROFILE,profileData)
+            detailIntent.putExtra(ProfilePageActivity.EXTRA_PICTURE,profile.profilePicture)
             context.startActivity(detailIntent)
         }
     }

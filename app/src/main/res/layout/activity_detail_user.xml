@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/frame_container"
-    tools:context=".ProfilePage">
+    tools:context=".activity.ProfilePageActivity">
 
-    <include layout="@layout/toolbar_detail"
+    <include layout="@layout/toolbar_detail_search"
         android:id="@+id/toolbar"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -102,6 +102,14 @@
                 android:fontFamily="@font/freesans"
                 android:text="-"
                 android:textColor="@color/light_black" />
+
+            <ProgressBar
+                android:id="@+id/progressBarDetail"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="160dp"
+                android:visibility="visible"/>
         </RelativeLayout>
         <RelativeLayout
             android:paddingLeft="22dp"
@@ -125,6 +133,7 @@
                 android:text="-"
                 android:textColor="@color/light_black" />
         </RelativeLayout>
+
 
         <RelativeLayout
             android:clickable="true"

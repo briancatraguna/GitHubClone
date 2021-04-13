@@ -1,8 +1,10 @@
 <resources>
-    //Action Bar
+    //Action Bar and Bottom Nav
     <string name="app_name">App Name</string>
     <string name="home">Home</string>
     <string name="back">Back</string>
+    <string name="profile_bottom">Profile</string>
+    <string name="settings">Settings</string>
 
     //Homepage
     <string name="explore">Explore Softwares with GitHub Mobile!</string>
@@ -25,6 +27,7 @@
     <string name="cancel">Cancel</string>
 
     //Details
+    <string name="profile">User Profile</string>
     <string name="company">Company Name</string>
     <string name="location">Location Name</string>
     <string name="link">Link</string>
@@ -48,4 +51,6 @@
 
     <string name="tab_text_1">Followers</string>
     <string name="tab_text_2">Following</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

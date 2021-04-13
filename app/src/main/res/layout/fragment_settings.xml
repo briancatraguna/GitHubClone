@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FollowersFragment">
+    tools:context=".fragment.SettingsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_followers"
-        android:layout_width="match_parent"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_row_developer_profiles"/>
+        android:text="SETTINGS FRAGMENT"
+        android:textSize="36sp"
+        android:layout_gravity="center"/>
 
 </FrameLayout>

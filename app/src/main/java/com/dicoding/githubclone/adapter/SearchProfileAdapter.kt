@@ -1,4 +1,4 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.dicoding.githubclone.R
+import com.dicoding.githubclone.activity.DetailUserActivity
 import com.dicoding.githubclone.data.Users
 import com.dicoding.githubclone.databinding.ItemRowDeveloperProfilesBinding
 
@@ -43,8 +45,8 @@ class SearchProfileAdapter: RecyclerView.Adapter<SearchProfileAdapter.UserViewHo
         holder.bind(list[position])
         holder.itemView.setOnClickListener{
             val context = holder.itemView.context
-            val detailIntent = Intent(context,DetailUser::class.java)
-            detailIntent.putExtra(DetailUser.EXTRA_USERNAME,list[position].login)
+            val detailIntent = Intent(context, DetailUserActivity::class.java)
+            detailIntent.putExtra(DetailUserActivity.EXTRA_USERNAME,list[position].login)
             context.startActivity(detailIntent)
         }
     }

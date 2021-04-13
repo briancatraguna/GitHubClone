@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/frame_container"
-    tools:context=".ProfilePage">
+    tools:context=".activity.ProfilePageActivity">
 
     <include layout="@layout/toolbar_detail"
         android:id="@+id/toolbar"/>

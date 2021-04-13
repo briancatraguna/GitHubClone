@@ -1,4 +1,7 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.localdata
+
+import com.dicoding.githubclone.data.Profiles
+import com.dicoding.githubclone.R
 
 object ProfilesData {
     private val fullNames = arrayOf(

@@ -1,12 +1,15 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.dicoding.githubclone.R
+import com.dicoding.githubclone.adapter.SectionsPagerAdapter
 import com.dicoding.githubclone.databinding.ActivityDetailUserBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -16,7 +19,7 @@ import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
 import java.lang.Exception
 
-class DetailUser : AppCompatActivity() {
+class DetailUserActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailUserBinding
     private lateinit var username: String
@@ -52,7 +55,7 @@ class DetailUser : AppCompatActivity() {
     }
 
     private fun setDetailData() {
-        val token = "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"
+        val token = "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"
         val url = "https://api.github.com/users/$username"
 
         val client = AsyncHttpClient()
@@ -100,6 +103,7 @@ class DetailUser : AppCompatActivity() {
                     }
 
                     binding.repoSearchDetail.text = responseObject.getInt("public_repos").toString()
+                    showLoading(false)
                 } catch (e:Exception){
                     Log.d("Exception",e.message.toString())
                 }
@@ -115,6 +119,14 @@ class DetailUser : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun showLoading(state: Boolean){
+        if (state){
+            binding.progressBarDetail.visibility = View.VISIBLE
+        } else {
+            binding.progressBarDetail.visibility = View.GONE
+        }
     }
 
 }

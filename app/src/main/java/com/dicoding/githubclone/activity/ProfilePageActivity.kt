@@ -1,12 +1,16 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import com.dicoding.githubclone.fragment.OptionDialogFragment
+import com.dicoding.githubclone.localdata.ProfileDetailsObject
+import com.dicoding.githubclone.data.Profiles
+import com.dicoding.githubclone.R
 import com.dicoding.githubclone.databinding.ActivityProfilePageBinding
 
-class ProfilePage : AppCompatActivity(),View.OnClickListener {
+class ProfilePageActivity : AppCompatActivity(),View.OnClickListener {
 
     private lateinit var username: String
     private lateinit var repositories: String

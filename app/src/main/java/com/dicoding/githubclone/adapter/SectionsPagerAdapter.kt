@@ -1,9 +1,10 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.adapter
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.dicoding.githubclone.fragment.FollowersFragment
+import com.dicoding.githubclone.fragment.FollowingFragment
 
 class SectionsPagerAdapter(activity: AppCompatActivity): FragmentStateAdapter(activity) {
 

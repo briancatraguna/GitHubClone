@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubClone">
-        <activity android:name=".DetailUser"></activity>
-        <activity android:name=".SearchUsers" />
-        <activity android:name=".ProfilePage" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.DetailUserActivity"></activity>
+        <activity android:name=".activity.SearchUsersActivity" />
+        <activity android:name=".activity.ProfilePageActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

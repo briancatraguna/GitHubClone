@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Action Bar and Bottom Nav
+    <string name="app_name">App Name</string>
+    <string name="home">Beranda</string>
+    <string name="back">Kembali</string>
+    <string name="profile_bottom">Profil</string>
+    <string name="settings">Pengaturan</string>
+
+    //Homepage
+    <string name="explore">Jelajahi perangkat lunak dengan GitHub Mobile!</string>
+    <string name="active_users">Pengguna Paling Aktif</string>
+    <string name="browse">Telusuri pengguna dengan commit terbanyak!</string>
+    <string name="search">Cari Developer</string>
+
+    //RecyclerView
+    <string name="full_name">Nama Lengkap</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
+    //SearchUser Page
+    <string name="search_user_app_bar_title">Developer</string>
+    <string name="search_hint">Cari</string>
+
+    //Detail Action Bar
+    <string name="share">Bagikan</string>
+    <string name="report">Laporkan</string>
+    <string name="cancel">Batalkan</string>
+
+    //Details
+    <string name="profile">Profil Pengguna</string>
+    <string name="company">Nama Perusahaan</string>
+    <string name="location">Nama Lokasi</string>
+    <string name="link">Tautan</string>
+    <string name="follow_stats">Pengikut Mengikuti</string>
+    <string name="following">Mengikuti</string>
+    <string name="description">Deskripsi</string>
+    <string name="pinned">Disematkan</string>
+    <string name="repository_name">Nama Repository</string>
+    <string name="repository_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="number_of_stars">20.000</string>
+    <string name="program_language">Bahasa</string>
+    <string name="repositories">Repositori</string>
+    <string name="starred">Bintang</string>
+    <string name="Organizations">Organisasi</string>
+    <string name="number">33</string>
+
+
+    //Fragments
+    <string name="followers_tab_title">Pengikut</string>
+    <string name="following_tab_title">Mengikuti</string>
+
+    <string name="tab_text_1">Pengikut</string>
+    <string name="tab_text_2">Mengikuti</string>
+
+</resources>

@@ -1,55 +1,22 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.viewmodel
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
-import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.dicoding.githubclone.data.Users
-import com.dicoding.githubclone.databinding.ActivitySearchUsersBinding
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
 import java.lang.Exception
 
-class SearchUsers : AppCompatActivity() {
-
-    private lateinit var binding: ActivitySearchUsersBinding
-    private var list = ArrayList<Users>()
-
-    companion object {
-        private val TAG = SearchUsers::class.java.simpleName
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivitySearchUsersBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.btnSearch.setOnClickListener{
-            val searchEdtText = binding.editTextSearch.text.toString()
-            if (searchEdtText.isEmpty()) return@setOnClickListener
-            showLoading(true)
-            setListUser(searchEdtText)
-            showLoading(false)
-            showRecyclerList()
-        }
-        binding.toolbarSearchPage.backHome.setOnClickListener{
-            finish()
-        }
-    }
-
-    private fun showRecyclerList() {
-        binding.rvUserSearch.layoutManager = LinearLayoutManager(this)
-        val listUserAdapter = SearchProfileAdapter()
-        listUserAdapter.setData(list)
-        binding.rvUserSearch.adapter = listUserAdapter
-    }
-
-    private fun setListUser(username: String) {
+class MainViewModel: ViewModel() {
+    val listUsers = MutableLiveData<ArrayList<Users>>()
+    //Setter
+    fun setUser(username:String){
         val listItems = ArrayList<Users>()
-        val token = "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"
+        val token = "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"
         val url = "https://api.github.com/search/users?q=$username"
 
         val client = AsyncHttpClient()
@@ -73,7 +40,7 @@ class SearchUsers : AppCompatActivity() {
                         listItems.add(UserClass)
                         Log.d("TAG","$username $avatar")
                     }
-                    list = listItems
+                    listUsers.postValue(listItems)
                 } catch (e: Exception){
                     Log.d("Exception",e.message.toString())
                 }
@@ -85,13 +52,8 @@ class SearchUsers : AppCompatActivity() {
 
         })
     }
-
-
-    private fun showLoading(state: Boolean){
-        if (state){
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
+    //getter
+    fun getUser():LiveData<ArrayList<Users>>{
+        return listUsers
     }
 }

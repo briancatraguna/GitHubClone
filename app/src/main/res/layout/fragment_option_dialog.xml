@@ -6,7 +6,7 @@
     android:background="@drawable/border"
     android:orientation="vertical"
     android:backgroundTint="@color/darker_white"
-    tools:context=".OptionDialogFragment">
+    tools:context=".fragment.OptionDialogFragment">
 
     <TextView
         android:id="@+id/share_button"

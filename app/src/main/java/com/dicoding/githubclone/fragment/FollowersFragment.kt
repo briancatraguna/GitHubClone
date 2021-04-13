@@ -1,4 +1,4 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -6,30 +6,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.githubclone.adapter.FollowAdapter
 import com.dicoding.githubclone.data.Users
 import com.dicoding.githubclone.databinding.FragmentFollowersBinding
-import com.dicoding.githubclone.databinding.FragmentFollowingBinding
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
 import org.json.JSONArray
-import org.json.JSONObject
 import java.lang.Exception
 
-class FollowingFragment : Fragment() {
 
-    private lateinit var binding: FragmentFollowingBinding
-    private var list = ArrayList<Users>()
-    private var layoutManager: RecyclerView.LayoutManager? = null
+class FollowersFragment: Fragment() {
 
+    private lateinit var binding: FragmentFollowersBinding
+    private lateinit var rvFollowers : RecyclerView
+    val listUserAdapter = FollowAdapter()
+
+    //Constructor
     companion object {
         private val ARG_USERNAME = "extra_username"
 
         fun newInstance(username:String):Fragment{
-            var fragment = FollowingFragment()
+            var fragment = FollowersFragment()
             val bundle = Bundle()
             bundle.putString(ARG_USERNAME,username)
             fragment.arguments = bundle
@@ -41,33 +41,37 @@ class FollowingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val username = arguments?.getString(ARG_USERNAME)
         setListUser(username)
-        binding.rvFollowing.setHasFixedSize(true)
+        rvFollowers.setHasFixedSize(true)
         showRecyclerList()
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFollowingBinding.inflate(inflater,container,false)
+        // Inflate the layout for this fragment
+        binding = FragmentFollowersBinding.inflate(inflater,container,false)
         val view: View = binding.root
+        rvFollowers = binding.rvFollowers
         return view
     }
 
     private fun showRecyclerList() {
-        binding.rvFollowing.layoutManager = LinearLayoutManager(activity)
-        val listUserAdapter = FollowingAdapter(list)
-        binding.rvFollowing.adapter = listUserAdapter
+        rvFollowers.layoutManager = LinearLayoutManager(activity)
+        rvFollowers.adapter = listUserAdapter
     }
 
     private fun setListUser(username: String?) {
         val listItems = ArrayList<Users>()
-        val token = "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"
-        val url = "https://api.github.com/users/$username/following"
+        val token = "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"
+        val url = "https://api.github.com/users/$username/followers"
 
         val client = AsyncHttpClient()
         client.addHeader("Authorization","token $token")
@@ -89,7 +93,7 @@ class FollowingFragment : Fragment() {
                         listItems.add(UserClass)
                         Log.d("TAG","$username $avatar")
                     }
-                    list = listItems
+                    listUserAdapter.setData(listItems)
                 } catch (e: Exception){
                     Log.d("Exception",e.message.toString())
                 }
@@ -101,4 +105,6 @@ class FollowingFragment : Fragment() {
 
         })
     }
+
+
 }

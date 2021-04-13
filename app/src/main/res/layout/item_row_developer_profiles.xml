@@ -29,7 +29,7 @@
         android:fontFamily="@font/freesansoblique"
         android:text="@string/username"
         android:textColor="@color/light_black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_profile_picture_search"
         app:layout_constraintTop_toTopOf="parent" />

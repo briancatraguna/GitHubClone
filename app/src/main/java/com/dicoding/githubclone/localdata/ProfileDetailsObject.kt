@@ -1,4 +1,6 @@
-package com.dicoding.githubclone
+package com.dicoding.githubclone.localdata
+
+import com.dicoding.githubclone.R
 
 object ProfileDetailsObject {
     val descriptionDetail: Map<String,String>
