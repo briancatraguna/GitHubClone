@@ -1,5 +1,6 @@
 package com.dicoding.githubclone.activity
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ import com.dicoding.githubclone.adapter.ListProfileAdapter
 import com.dicoding.githubclone.data.Profiles
 import com.dicoding.githubclone.localdata.ProfilesData
 import com.dicoding.githubclone.databinding.ActivityMainBinding
+import com.dicoding.githubclone.fragment.FavoriteFragment
 import com.dicoding.githubclone.fragment.HomeFragment
 import com.dicoding.githubclone.fragment.ProfileFragment
 import com.dicoding.githubclone.fragment.SettingsFragment
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity(){
     //Make it a global variable
     private val homeFragment = HomeFragment()
     private val profileFragment = ProfileFragment()
+    private val favoriteFragment = FavoriteFragment()
     private val settingsFragment = SettingsFragment()
 
     companion object {
@@ -34,12 +37,12 @@ class MainActivity : AppCompatActivity(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         replaceFragment(homeFragment)
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.ic_home -> replaceFragment(homeFragment)
                 R.id.ic_profile -> replaceFragment(profileFragment)
+                R.id.ic_favorite -> replaceFragment(favoriteFragment)
                 R.id.ic_settings -> replaceFragment(settingsFragment)
             }
             true

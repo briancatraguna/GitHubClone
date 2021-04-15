@@ -11,6 +11,11 @@
         android:title="@string/profile"/>
 
     <item
+        android:id="@+id/ic_favorite"
+        android:icon="@drawable/ic_favorite_bottom"
+        android:title="@string/favorite"/>
+
+    <item
         android:id="@+id/ic_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/settings"/>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference
+        app:layout="@layout/toolbar_settings"/>
+
+    <EditTextPreference
+        android:key="@string/key_username"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="@string/nothing"
+        android:title="@string/username"
+        android:iconSpaceReserved="true"
+        android:icon="@drawable/profile"
+        android:positiveButtonText="@string/positive_button"
+        android:negativeButtonText="@string/cancel" />
+
+    <Preference
+        android:key="@string/language"
+        android:icon="@drawable/ic_baseline_language_24"
+        android:title="@string/language_settings"/>
+
+    <SwitchPreference
+        android:key="@string/switch_preference"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="@string/reminder_title"
+        android:summaryOff="@string/summary_off"
+        app:summaryOn="@string/summary_on"/>
+
+</PreferenceScreen>

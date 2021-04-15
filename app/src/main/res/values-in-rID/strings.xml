@@ -5,7 +5,10 @@
     <string name="home">Beranda</string>
     <string name="back">Kembali</string>
     <string name="profile_bottom">Profil</string>
+    <string name="favorite">Favorit</string>
     <string name="settings">Pengaturan</string>
+    <string name="favorite_profile">Profil Favorit</string>
+    <string name="your_profile">Profil Anda</string>
 
     //Homepage
     <string name="explore">Jelajahi perangkat lunak dengan GitHub Mobile!</string>
@@ -53,4 +56,15 @@
     <string name="tab_text_1">Pengikut</string>
     <string name="tab_text_2">Mengikuti</string>
 
+    //Settings Page
+    <string name="language_settings">Pengaturan Bahasa</string>
+    <string name="brian_mohammed_catraguna">Brian Mohammed Catraguna</string>
+    <string name="brian_username">briancatraguna</string>
+    <string name="github_user">Pengguna Github</string>
+    <string name="key_username">username</string>
+    <string name="nothing">Tidak Ada</string>
+    <string name="positive_button">OK</string>
+    <string name="negative_button">Batalkan</string>
+    <string name="switch_preference">switch_preference</string>
+    <string name="reminder_title">Pengingat pada jam 9 pagi</string>
 </resources>

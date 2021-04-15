@@ -4,10 +4,13 @@
     <string name="home">Home</string>
     <string name="back">Back</string>
     <string name="profile_bottom">Profile</string>
+    <string name="favorite">Favorites</string>
     <string name="settings">Settings</string>
+    <string name="favorite_profile">Favorite Profile</string>
+    <string name="your_profile">Your Profile</string>
 
     //Homepage
-    <string name="explore">Explore Softwares with GitHub Mobile!</string>
+    <string name="explore">Explore softwares with GitHub Mobile!</string>
     <string name="active_users">Most Active Users</string>
     <string name="browse">Browse through the users with the highest commits!</string>
     <string name="search">Search a Developer</string>
@@ -51,6 +54,19 @@
 
     <string name="tab_text_1">Followers</string>
     <string name="tab_text_2">Following</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Settings Page
+    <string name="language_settings">Language Settings</string>
+    <string name="brian_mohammed_catraguna">Brian Mohammed Catraguna</string>
+    <string name="brian_username">briancatraguna</string>
+    <string name="github_user">Github User</string>
+    <string name="key_username">username</string>
+    <string name="nothing">Nothing</string>
+    <string name="positive_button">OK</string>
+    <string name="negative_button">Cancel</string>
+    <string name="language">language</string>
+    <string name="switch_preference">switch_preference</string>
+    <string name="reminder_title">Set Reminder at 9 a.m</string>
+    <string name="summary_on">Reminder ON</string>
+    <string name="summary_off">Reminder OFF</string>
 </resources>

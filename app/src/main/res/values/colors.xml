@@ -17,9 +17,11 @@
     <color name="scala">#C32D41</color>
     <color name="PHP">#4D5E92</color>
     <color name="ruby">#6E1513</color>
+    <color name="python">#3572A5</color>
     <color name="green_following">#417816</color>
     <color name="repositories">#8A62D1</color>
     <color name="starred">#F7C61A</color>
     <color name="organization">#F98634</color>
     <color name="github_button">#2EA44F</color>
+    <color name="gray">#818181</color>
 </resources>

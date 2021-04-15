@@ -12,18 +12,8 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/helvetica"
         android:gravity="center"
-        android:text="@string/profile"
+        android:text="@string/favorite_profile"
         android:textColor="@color/black"
         android:textSize="25dp" />
-
-    <ImageView
-        android:clickable="true"
-        android:id="@+id/button_favorite"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_baseline_favorite_border_24"
-        android:layout_toRightOf="@id/tv_user_profile_toolbar"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="200dp"/>
 
 </RelativeLayout>

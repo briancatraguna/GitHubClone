@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Action Bar and Bottom Nav
+    <string name="app_name">App Name</string>
+    <string name="home">Casa</string>
+    <string name="back">Espalda</string>
+    <string name="profile_bottom">Perfil</string>
+    <string name="favorite">Favoritos</string>
+    <string name="settings">Ajustes</string>
+    <string name="favorite_profile">Perfil Favorito</string>
+    <string name="your_profile">Tu Perfil</string>
+
+    //Homepage
+    <string name="explore">Explorar softwares con GitHub Mobile!</string>
+    <string name="active_users">Usuarios Más Activos</string>
+    <string name="browse">Navegue a través de los usuarios con los compromisos más altos!</string>
+    <string name="search">Buscar un Desarrollador</string>
+
+    //RecyclerView
+    <string name="full_name">Nombre Completo</string>
+    <string name="username">Nombre De Usuario</string>
+    <string name="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
+    //SearchUser Page
+    <string name="search_user_app_bar_title">Desarrolladores</string>
+    <string name="search_hint">Buscar</string>
+
+    //Detail Action Bar
+    <string name="share">Cuota</string>
+    <string name="report">Informe</string>
+    <string name="cancel">Cancelar</string>
+
+    //Details
+    <string name="profile">Perfil Del Usuario</string>
+    <string name="company">Nombre De Empresa</string>
+    <string name="location">Nombre Del Lugar</string>
+    <string name="link">Enlace</string>
+    <string name="follow_stats">Seguidor Siguiendo</string>
+    <string name="following">Siguiente</string>
+    <string name="description">Descripción</string>
+    <string name="pinned">Clavado</string>
+    <string name="repository_name">Nombre Del Repositorio</string>
+    <string name="repository_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="number_of_stars">20.000</string>
+    <string name="program_language">Idioma</string>
+    <string name="repositories">Repositorios</string>
+    <string name="starred">Protagonizado</string>
+    <string name="Organizations">Organizaciones</string>
+    <string name="number">33</string>
+
+
+    //Fragments
+    <string name="followers_tab_title">Seguidores</string>
+    <string name="following_tab_title">Siguiente</string>
+
+    <string name="tab_text_1">Seguidores</string>
+    <string name="tab_text_2">Siguiente</string>
+
+    //Settings Page
+    <string name="language_settings">Ajustes De Idioma</string>
+    <string name="brian_mohammed_catraguna">Brian Mohammed Catraguna</string>
+    <string name="brian_username">briancatraguna</string>
+    <string name="github_user">Usuario De Github</string>
+    <string name="key_username">nombreDeUsuario</string>
+    <string name="nothing">Nada</string>
+    <string name="positive_button">OK</string>
+    <string name="negative_button">Cancelar</string>
+    <string name="switch_preference">switch_preference</string>
+    <string name="reminder_title">Establecer Recordatorio a Las 9 a.m</string>
+</resources>

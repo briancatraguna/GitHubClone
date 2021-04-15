@@ -5,13 +5,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".stetho.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubClone">
-        <activity android:name=".activity.DetailUserActivity"></activity>
+        <activity android:name=".activity.DetailFavoriteActivity"></activity>
+        <activity android:name=".activity.DetailUserActivity" />
         <activity android:name=".activity.SearchUsersActivity" />
         <activity android:name=".activity.ProfilePageActivity" />
         <activity android:name=".activity.MainActivity">

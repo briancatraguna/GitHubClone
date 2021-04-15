@@ -16,7 +16,7 @@ class MainViewModel: ViewModel() {
     //Setter
     fun setUser(username:String){
         val listItems = ArrayList<Users>()
-        val token = "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"
+        val token = "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"
         val url = "https://api.github.com/search/users?q=$username"
 
         val client = AsyncHttpClient()

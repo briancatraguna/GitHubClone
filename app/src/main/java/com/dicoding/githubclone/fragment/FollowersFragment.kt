@@ -70,7 +70,7 @@ class FollowersFragment: Fragment() {
 
     private fun setListUser(username: String?) {
         val listItems = ArrayList<Users>()
-        val token = "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"
+        val token = "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"
         val url = "https://api.github.com/users/$username/followers"
 
         val client = AsyncHttpClient()
