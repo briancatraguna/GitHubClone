@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.dicoding.githubclone.R
@@ -21,7 +22,7 @@ class AlarmReceiver:BroadcastReceiver() {
         private const val CHANNEL_ID = "channel_01"
         private const val CHANNEL_NAME = "GitHub Reminder"
         private const val NOTIFICATION_ID = 1
-        private const val TIME_FORMAT = "HH:MM"
+        private const val TIME_FORMAT = "HH:mm"
         const val EXTRA_MESSAGE = "extra_message"
         const val EXTRA_TYPE = "extra_type"
         private const val ID_REPEATING = 101
@@ -58,6 +59,7 @@ class AlarmReceiver:BroadcastReceiver() {
         if (isDateInvalid(time,TIME_FORMAT)) return
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
+
         val intent = Intent(context, AlarmReceiver::class.java)
         intent.putExtra(EXTRA_MESSAGE,message)
         intent.putExtra(EXTRA_TYPE,type)
@@ -78,6 +80,7 @@ class AlarmReceiver:BroadcastReceiver() {
             dateFormat.parse(time)
             false
         } catch (e: ParseException){
+            Log.d("Tag",e.toString())
             true
         }
     }

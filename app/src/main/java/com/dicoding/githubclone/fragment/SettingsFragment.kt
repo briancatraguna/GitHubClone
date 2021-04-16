@@ -2,6 +2,7 @@ package com.dicoding.githubclone.fragment
 
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.preference.EditTextPreference
@@ -64,15 +65,16 @@ class SettingsFragment: PreferenceFragmentCompat(), SharedPreferences.OnSharedPr
         REMINDER = resources.getString(R.string.switch_preference)
         reminderPreference = findPreference<SwitchPreference>(REMINDER) as SwitchPreference
 
+        alarmReceiver = AlarmReceiver()
+
         fragmentContext = activity?.applicationContext!!
+        fragmentContext.registerReceiver(alarmReceiver, IntentFilter())
         val settingsPreference = SettingsPreference(fragmentContext)
         if (settingsPreference.getSettings().reminder){
             reminderPreference.isChecked = true
         } else {
             reminderPreference.isChecked = false
         }
-
-        alarmReceiver = AlarmReceiver()
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
@@ -82,7 +84,7 @@ class SettingsFragment: PreferenceFragmentCompat(), SharedPreferences.OnSharedPr
         }
         if (reminderPreference.isChecked){
             saveReminder(true,sharedPreferences)
-            alarmReceiver.setRepeatingAlarm(fragmentContext,"RepeatingAlarm","01:20","Github reminder")
+            alarmReceiver.setRepeatingAlarm(fragmentContext,"RepeatingAlarm","11:40","Github reminder")
         } else {
             saveReminder(false,sharedPreferences)
             alarmReceiver.cancelAlarm(fragmentContext)
