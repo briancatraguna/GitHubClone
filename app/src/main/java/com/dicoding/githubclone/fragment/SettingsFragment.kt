@@ -67,7 +67,7 @@ class SettingsFragment: PreferenceFragmentCompat(), SharedPreferences.OnSharedPr
 
         alarmReceiver = AlarmReceiver()
 
-        fragmentContext = activity?.applicationContext!!
+        fragmentContext = requireContext()
         fragmentContext.registerReceiver(alarmReceiver, IntentFilter())
         val settingsPreference = SettingsPreference(fragmentContext)
         if (settingsPreference.getSettings().reminder){
@@ -84,7 +84,7 @@ class SettingsFragment: PreferenceFragmentCompat(), SharedPreferences.OnSharedPr
         }
         if (reminderPreference.isChecked){
             saveReminder(true,sharedPreferences)
-            alarmReceiver.setRepeatingAlarm(fragmentContext,"RepeatingAlarm","11:40","Github reminder")
+            alarmReceiver.setRepeatingAlarm(fragmentContext,"RepeatingAlarm","09:00","Github reminder")
         } else {
             saveReminder(false,sharedPreferences)
             alarmReceiver.cancelAlarm(fragmentContext)

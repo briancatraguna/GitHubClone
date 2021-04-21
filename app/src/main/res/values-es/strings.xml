@@ -67,4 +67,7 @@
     <string name="negative_button">Cancelar</string>
     <string name="switch_preference">switch_preference</string>
     <string name="reminder_title">Establecer Recordatorio a Las 9 a.m</string>
+    <string name="language">Idioma</string>
+    <string name="summary_on">Recordatorio EN</string>
+    <string name="summary_off">Recordatorio APAGADO</string>
 </resources>

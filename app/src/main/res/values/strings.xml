@@ -1,6 +1,6 @@
 <resources>
     //Action Bar and Bottom Nav
-    <string name="app_name">App Name</string>
+    <string name="app_name">GitHub Mobile</string>
     <string name="home">Home</string>
     <string name="back">Back</string>
     <string name="profile_bottom">Profile</string>

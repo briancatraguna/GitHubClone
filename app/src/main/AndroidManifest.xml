@@ -3,6 +3,8 @@
     package="com.dicoding.githubclone">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="com.dicoding.githubclone.READ_DATABASE" android:protectionLevel="normal"/>
+    <permission android:name="com.dicoding.githubclone.WRITE_DATABASE" android:protectionLevel="normal"/>
 
     <application
         android:name=".stetho.MyApplication"
@@ -12,11 +14,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubClone">
+        <provider
+            android:name=".provider.UserProvider"
+            android:authorities="com.dicoding.githubclone"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.dicoding.githubclone.READ_DATABASE"
+            android:writePermission="com.dicoding.githubclone.WRITE_DATABASE"/>
+
         <receiver
             android:name=".receiver.AlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
-        <activity android:name=".activity.DetailFavoriteActivity"></activity>
+            android:exported="true" />
+
+        <activity android:name=".activity.DetailFavoriteActivity" />
         <activity android:name=".activity.DetailUserActivity" />
         <activity android:name=".activity.SearchUsersActivity" />
         <activity android:name=".activity.ProfilePageActivity" />

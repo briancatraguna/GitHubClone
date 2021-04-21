@@ -42,7 +42,7 @@ class AlarmReceiver:BroadcastReceiver() {
                 .setContentIntent(pendingIntent)
                 .setSmallIcon(R.drawable.ic_baseline_notifications_24)
                 .setContentTitle(context.getString(R.string.app_name))
-                .setContentText("Find your favorite users now!")
+                .setContentText("It's time to explore code with GitHub mobile!")
                 .setAutoCancel(true)
 
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){

@@ -12,14 +12,15 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.githubclone.activity.DetailFavoriteActivity
 import com.dicoding.githubclone.activity.DetailUserActivity
-import com.dicoding.githubclone.data.FavoriteModelClass
-import com.dicoding.githubclone.database.DatabaseHandler
+import com.dicoding.githubclone.data.FavoriteUser
+import com.dicoding.githubclone.database.MappingHelper
+import com.dicoding.githubclone.database.UserHelper
 import com.dicoding.githubclone.databinding.ItemRowFavoritesBinding
 
 class FavoriteAdapter: RecyclerView.Adapter<FavoriteAdapter.UserViewHolder>() {
 
-    private val listFavorite = ArrayList<FavoriteModelClass>()
-    fun setData(items:ArrayList<FavoriteModelClass>){
+    private val listFavorite = ArrayList<FavoriteUser>()
+    fun setData(items:ArrayList<FavoriteUser>){
         listFavorite.clear()
         listFavorite.addAll(items)
         notifyDataSetChanged()
@@ -30,7 +31,7 @@ class FavoriteAdapter: RecyclerView.Adapter<FavoriteAdapter.UserViewHolder>() {
         val removeButton: ImageView = binding.removeUserButton
         val username: TextView = binding.usernameSearch
 
-        fun bind(user: FavoriteModelClass){
+        fun bind(user: FavoriteUser){
             with(binding){
                 Glide.with(itemView.context)
                         .load(user.avatar)
@@ -66,15 +67,20 @@ class FavoriteAdapter: RecyclerView.Adapter<FavoriteAdapter.UserViewHolder>() {
         }
     }
 
-    private fun getItemList(context: Context): ArrayList<FavoriteModelClass>{
-        val databaseHandler: DatabaseHandler = DatabaseHandler(context)
-        val favoriteList: ArrayList<FavoriteModelClass> = databaseHandler.viewUserInFavorite()
-        return favoriteList
+    private fun getItemList(context: Context): ArrayList<FavoriteUser>{
+        val userHelper = UserHelper.getInstance(context)
+        userHelper.open()
+        val cursor = userHelper.queryAll()
+        val users = MappingHelper.mapCursorToArrayList(cursor)
+        userHelper.close()
+        return users
     }
 
     private fun deleteFromFavorite(context:Context,username:String){
-        val databaseHandler: DatabaseHandler = DatabaseHandler(context)
-        val status = databaseHandler.deleteUserInFavoriteByUsername(username)
+        val userHelper = UserHelper.getInstance(context)
+        userHelper.open()
+        val status = userHelper.deleteByUsername(username)
+        userHelper.close()
         if (status>-1){
             Toast.makeText(context,"Removed $username from favorites!", Toast.LENGTH_SHORT).show()
         } else {

@@ -1,5 +1,6 @@
 package com.dicoding.githubclone.activity
 
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,14 +13,16 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.dicoding.githubclone.R
 import com.dicoding.githubclone.adapter.SectionsPagerAdapter
-import com.dicoding.githubclone.data.FavoriteModelClass
-import com.dicoding.githubclone.database.DatabaseHandler
+import com.dicoding.githubclone.database.*
 import com.dicoding.githubclone.databinding.ActivityDetailUserBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 import java.lang.Exception
 
@@ -74,14 +77,16 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun getStatusFavorite(): Boolean {
-        val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-        val favoriteList: ArrayList<FavoriteModelClass> = databaseHandler.viewUserInFavorite()
-        var usernameCheck : String
-        for (item in favoriteList){
+        val userHelper = UserHelper.getInstance(applicationContext)
+        userHelper.open()
+        val cursor = userHelper.queryAll()
+        val users = MappingHelper.mapCursorToArrayList(cursor)
+        userHelper.close()
+        var usernameCheck: String
+        for (item in users){
             usernameCheck = item.username
-            if (usernameCheck == username){
+            if (usernameCheck == username)
                 return true
-            }
         }
         return false
     }
@@ -90,9 +95,14 @@ class DetailUserActivity : AppCompatActivity() {
      * Adds to favorite database
      */
     private fun addToFavorite(){
-        //initialize the database handler object
-        val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-        val status = databaseHandler.addUserToFavorite(FavoriteModelClass(0,username,avatar))
+        val userHelper = UserHelper.getInstance(applicationContext)
+        userHelper.open()
+        val contentValues = ContentValues()
+        contentValues.put(DatabaseContract.UserColumns.KEY_USERNAME,username) //putting the username
+        contentValues.put(DatabaseContract.UserColumns.KEY_AVATAR,avatar)
+        val status = userHelper.insert(contentValues)
+        userHelper.close()
+
         if (status>-1){
             Toast.makeText(this,"Added $username to favorites!",Toast.LENGTH_SHORT).show()
         } else {
@@ -104,13 +114,16 @@ class DetailUserActivity : AppCompatActivity() {
      * Deletes user from favorite database
      */
     private fun deleteFromFavorite(){
-        val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-        val status = databaseHandler.deleteUserInFavoriteByUsername(username)
+        val userHelper = UserHelper.getInstance(applicationContext)
+        userHelper.open()
+        val status = userHelper.deleteByUsername(username)
+        userHelper.close()
         if (status>-1){
             Toast.makeText(this,"Removed $username from favorites!",Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this,"Failed to remove $username from favorites!",Toast.LENGTH_SHORT).show()
         }
+
     }
 
     private fun setStatusFavorite(statusFavorite: Boolean) {
@@ -123,7 +136,7 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun setDetailData() {
-        val token = "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"
+        val token = "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"
         val url = "https://api.github.com/users/$username"
 
         val client = AsyncHttpClient()
@@ -190,7 +203,7 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun getAvatar(){
-        val token = "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"
+        val token = "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"
         val url = "https://api.github.com/users/$username"
 
         val client = AsyncHttpClient()

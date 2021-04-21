@@ -67,4 +67,7 @@
     <string name="negative_button">Batalkan</string>
     <string name="switch_preference">switch_preference</string>
     <string name="reminder_title">Pengingat pada jam 9 pagi</string>
+    <string name="language">Bahasa</string>
+    <string name="summary_on">Pengingat NYALA</string>
+    <string name="summary_off">Pengingat MATI</string>
 </resources>

@@ -2,25 +2,33 @@ package com.dicoding.githubclone.activity
 
 import android.content.Context
 import android.content.Intent
+import android.database.ContentObserver
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.githubclone.R
 import com.dicoding.githubclone.adapter.ListProfileAdapter
+import com.dicoding.githubclone.data.FavoriteUser
 import com.dicoding.githubclone.data.Profiles
+import com.dicoding.githubclone.database.DatabaseContract
+import com.dicoding.githubclone.database.MappingHelper
 import com.dicoding.githubclone.localdata.ProfilesData
 import com.dicoding.githubclone.databinding.ActivityMainBinding
 import com.dicoding.githubclone.fragment.FavoriteFragment
 import com.dicoding.githubclone.fragment.HomeFragment
 import com.dicoding.githubclone.fragment.ProfileFragment
 import com.dicoding.githubclone.fragment.SettingsFragment
+import com.dicoding.githubclone.receiver.AlarmReceiver
 
 class MainActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityMainBinding
+    val users: ArrayList<FavoriteUser> = ArrayList<FavoriteUser>()
 
     //Make it a global variable
     private val homeFragment = HomeFragment()
@@ -37,6 +45,17 @@ class MainActivity : AppCompatActivity(){
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val handlerThread = HandlerThread("DataObserver")
+        handlerThread.start()
+        val handler = Handler(handlerThread.looper)
+
+        val myObserver = object: ContentObserver(handler){
+            override fun onChange(selfChange: Boolean) {
+                loadUsers()
+            }
+        }
+        contentResolver.registerContentObserver(DatabaseContract.UserColumns.CONTENT_URI,true,myObserver)
+
         replaceFragment(homeFragment)
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -47,6 +66,11 @@ class MainActivity : AppCompatActivity(){
             }
             true
         }
+    }
+
+    private fun loadUsers() {
+        val cursor = contentResolver.query(DatabaseContract.UserColumns.CONTENT_URI,null,null,null,null)
+        users.addAll(MappingHelper.mapCursorToArrayList(cursor))
     }
 
     private fun replaceFragment(fragment: Fragment){
