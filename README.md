@@ -2,34 +2,56 @@
 
 GitHub mobile app for Android. All written using Kotlin. Submission for [Dicoding Android Fundamental Course](https://www.dicoding.com/academies/14)
 
-Features:
+### Features:
 - Search for users in GitHub 👨‍
-- Look at profile of users in GitHub 👁️‍
+- Look at profile of users in GitHub and look at their followers and followings 👁️‍
 - Add users to favorites ♥️
 - Set up reminder to go back to the app at 9am ⏰
+- Consumer app that receives data from the main app! ✨
 
-## Dependencies
+## Screenshots 📸
 
-```
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9"
-    implementation 'androidx.preference:preference:1.1.1'
+#### Main page of the app! Where you can browse the most active users!
 
-    implementation 'com.loopj.android:android-async-http:1.4.9'
-    implementation "androidx.viewpager2:viewpager2:1.0.0"
+<br>
+<img src="https://user-images.githubusercontent.com/32363208/124342203-7e243900-dbec-11eb-99ff-0a56d0a83267.jpeg" width=200/>
+</br>
 
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "com.github.bumptech.glide:glide:4.11.0"
+#### Profile page!
 
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-```
+<br>
+<img src="https://user-images.githubusercontent.com/32363208/124342190-63ea5b00-dbec-11eb-852e-24dbb6600302.jpeg" width=200/>
+</br>
+
+#### Search any github users that you want!
+
+<br>
+<img src="https://user-images.githubusercontent.com/32363208/124342164-39000700-dbec-11eb-9711-f8d212b295a7.jpeg" width=200/>
+</br>
+
+#### Click on favorite to add them into your favorites!
+
+<br>
+<img src="https://user-images.githubusercontent.com/32363208/124342170-4ae1aa00-dbec-11eb-9841-8afb89456457.jpeg" width=200/>
+</br>
+
+#### Browse through your favorites!
+
+<br>
+<img src="https://user-images.githubusercontent.com/32363208/124342156-284f9100-dbec-11eb-9d80-26adf1b4fe1f.jpeg" width=200/>
+</br>
+
+#### You can also look into your favorites through the consumer application!
+
+<br>
+<img src="https://user-images.githubusercontent.com/32363208/124342120-d27ae900-dbeb-11eb-8c0b-24ed7923ed74.jpeg" width=200/>
+</br>
+
+#### Finally you can also change the language, your profile and set reminders!
+
+<br>
+<img src="https://user-images.githubusercontent.com/32363208/124342146-0f46e000-dbec-11eb-9fc0-52f5e20a721f.jpeg" width=200/>
+</br>
+
+
+
