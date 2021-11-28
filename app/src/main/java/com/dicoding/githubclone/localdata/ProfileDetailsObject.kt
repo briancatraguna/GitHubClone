@@ -15,8 +15,7 @@ object ProfileDetailsObject {
                     "egoist" to "\uD83C\uDFE0",
                     "taylorotwell" to "\uD83C\uDFC4\u200D♂️",
                     "andrew" to "\uD83D\uDC29",
-                    "fabpot" to "\uD83D\uDE00",
-                    "feryandi" to "\uD83D\uDC77\u200D♂️"
+                    "fabpot" to "\uD83D\uDE00"
             )
             return descDetail
         }
@@ -33,8 +32,7 @@ object ProfileDetailsObject {
                     "egoist" to " - ",
                     "taylorotwell" to "Laravel",
                     "andrew" to " - ",
-                    "fabpot" to "Symfony/Blackfire",
-                    "feryandi" to "Carnegie Mellon University"
+                    "fabpot" to "Symfony/Blackfire"
             )
             return compDetail
         }
@@ -51,8 +49,7 @@ object ProfileDetailsObject {
                     "egoist" to "China",
                     "taylorotwell" to "Little Rock, AR",
                     "andrew" to "UK",
-                    "fabpot" to "Lille, France",
-                    "feryandi" to "United States"
+                    "fabpot" to "Lille, France"
             )
             return locDetail
         }
@@ -70,8 +67,7 @@ object ProfileDetailsObject {
                     "egoist" to "https://egoist.sh",
                     "taylorotwell" to "http://laravel.com",
                     "andrew" to "https://nesbitt.io",
-                    "fabpot" to "http://fabien.potencier.org/",
-                    "feryandi" to "kutu.dev"
+                    "fabpot" to "http://fabien.potencier.org/"
             )
             return linkDetail
         }
@@ -88,8 +84,7 @@ object ProfileDetailsObject {
                     "egoist" to "8.1k followers · 25 following",
                     "taylorotwell" to "21.6k followers · 0 following",
                     "andrew" to "2.6k followers · 3.2k following",
-                    "fabpot" to "11.3k followers · 0 following",
-                    "feryandi" to "52 followers · 7 following"
+                    "fabpot" to "11.3k followers · 0 following"
             )
             return followStatsDetail
         }
@@ -106,8 +101,7 @@ object ProfileDetailsObject {
                     "egoist" to "saber",
                     "taylorotwell" to "laravel",
                     "andrew" to "octobox",
-                    "fabpot" to "symfony",
-                    "feryandi" to "PilahPilihPilpres"
+                    "fabpot" to "symfony"
             )
             return repositoryNameDetail
         }
@@ -124,8 +118,7 @@ object ProfileDetailsObject {
                     "egoist" to "()==[:::::::::::::> Build static sites in Vue.js, without the hassle",
                     "taylorotwell" to "A PHP framework for web artisans",
                     "andrew" to "\uD83D\uDCEEUntangle your GitHub Notifications",
-                    "fabpot" to "The Symfony PHP framework",
-                    "feryandi" to "A quiz based application, a social project, to create awareness and help Indonesian to choose their next president (in 2019) wisely solely based on their political agendas and aspirations."
+                    "fabpot" to "The Symfony PHP framework"
             )
             return repositoryDescriptionDetail
         }
@@ -142,8 +135,7 @@ object ProfileDetailsObject {
                     "egoist" to "2.059",
                     "taylorotwell" to "64.331",
                     "andrew" to "4.027",
-                    "fabpot" to "24.782",
-                    "feryandi" to "55"
+                    "fabpot" to "24.782"
             )
             return starNumberDetail
         }
@@ -160,8 +152,7 @@ object ProfileDetailsObject {
                     "egoist" to "JavaScript",
                     "taylorotwell" to "PHP",
                     "andrew" to "Ruby",
-                    "fabpot" to "PHP",
-                    "feryandi" to "JavaScript"
+                    "fabpot" to "PHP"
             )
             return programLanguageDetail
         }
@@ -178,8 +169,7 @@ object ProfileDetailsObject {
                     "egoist" to R.drawable.javascript,
                     "taylorotwell" to R.drawable.php,
                     "andrew" to R.drawable.ruby,
-                    "fabpot" to R.drawable.php,
-                    "feryandi" to R.drawable.javascript
+                    "fabpot" to R.drawable.php
             )
             return programLanguageVectorDetail
         }
@@ -196,8 +186,7 @@ object ProfileDetailsObject {
                     "egoist" to "722",
                     "taylorotwell" to "18",
                     "andrew" to "298",
-                    "fabpot" to "55",
-                    "feryandi" to "33"
+                    "fabpot" to "55"
             )
             return repoNumber
         }
@@ -214,8 +203,7 @@ object ProfileDetailsObject {
                     "egoist" to "2.988",
                     "taylorotwell" to "195",
                     "andrew" to "6.112",
-                    "fabpot" to "157",
-                    "feryandi" to "75"
+                    "fabpot" to "157"
             )
             return starNumber
         }
@@ -232,8 +220,7 @@ object ProfileDetailsObject {
                     "egoist" to "3",
                     "taylorotwell" to "2",
                     "andrew" to "10",
-                    "fabpot" to "9",
-                    "feryandi" to "1"
+                    "fabpot" to "9"
             )
             return orgNumber
         }
