@@ -14,7 +14,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        buildConfigField("String", "API_KEY", '"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"')
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,8 +25,14 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            buildConfigField("String", "API_KEY", '"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"')
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            buildConfigField("String", "API_KEY", '"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"')
+        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

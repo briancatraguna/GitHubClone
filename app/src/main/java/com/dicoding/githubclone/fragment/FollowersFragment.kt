@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.dicoding.githubclone.BuildConfig
 import com.dicoding.githubclone.adapter.FollowAdapter
 import com.dicoding.githubclone.data.Users
 import com.dicoding.githubclone.databinding.FragmentFollowersBinding
@@ -70,7 +71,7 @@ class FollowersFragment: Fragment() {
 
     private fun setListUser(username: String?) {
         val listItems = ArrayList<Users>()
-        val token = "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"
+        val token = BuildConfig.API_KEY
         val url = "https://api.github.com/users/$username/followers"
 
         val client = AsyncHttpClient()

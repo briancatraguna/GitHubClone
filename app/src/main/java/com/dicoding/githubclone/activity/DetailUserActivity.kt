@@ -11,6 +11,7 @@ import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.dicoding.githubclone.BuildConfig
 import com.dicoding.githubclone.R
 import com.dicoding.githubclone.adapter.SectionsPagerAdapter
 import com.dicoding.githubclone.database.*
@@ -136,7 +137,7 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun setDetailData() {
-        val token = "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"
+        val token = BuildConfig.API_KEY
         val url = "https://api.github.com/users/$username"
 
         val client = AsyncHttpClient()
@@ -203,7 +204,7 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun getAvatar(){
-        val token = "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"
+        val token = BuildConfig.API_KEY
         val url = "https://api.github.com/users/$username"
 
         val client = AsyncHttpClient()

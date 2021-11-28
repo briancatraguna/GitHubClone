@@ -13,6 +13,7 @@ import com.dicoding.githubclone.data.Users
 import com.dicoding.githubclone.databinding.FragmentFollowingBinding
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
+import com.dicoding.githubclone.BuildConfig
 import cz.msebera.android.httpclient.Header
 import org.json.JSONArray
 import java.lang.Exception
@@ -64,7 +65,7 @@ class FollowingFragment : Fragment() {
 
     private fun setListUser(username: String?) {
         val listItems = ArrayList<Users>()
-        val token = "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"
+        val token = BuildConfig.API_KEY
         val url = "https://api.github.com/users/$username/following"
 
         val client = AsyncHttpClient()
